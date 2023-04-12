@@ -25,11 +25,6 @@ h1 {
 img {
     width: 80px;
     height: 80px;
-}
-
-.memory-card {
-    width: 80px;
-    height: 80px;
     padding: 10px;
     border-color: black;
     border-width: 2px;
@@ -37,6 +32,10 @@ img {
     border-radius: 10%;
     float: left;
     margin: 5px;
+}
+
+img:hover {
+    background-color: #ffff00;
 }
 
 button {

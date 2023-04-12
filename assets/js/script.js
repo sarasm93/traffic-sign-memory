@@ -1,15 +1,17 @@
-runGame();
 
-checkAnswer();
 
-startTime();
+runGame() {}
 
-stopTime();
+checkAnswer() {}
 
-displayTime();
+startTime() {}
 
-saveTime();
+stopTime() {}
 
-resetGame();
+displayTime() {}
 
-resetTime();
+saveTime() {}
+
+resetGame() {}
+
+resetTime() {}

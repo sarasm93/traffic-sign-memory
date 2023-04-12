@@ -6,6 +6,8 @@ body {
     background-color: #add8e6;
 }
 
+/* Rules-box with heading */
+
 h1 {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
 }
@@ -13,6 +15,8 @@ h1 {
 #rules-box p {
     line-height: 22px;
 }
+
+/* Game board with cards */
 
 #game-board {
     width: 570px;
@@ -37,6 +41,8 @@ img {
 img:hover {
     background-color: #ffff00;
 }
+
+/* Result-box with time tracker and buttons for saving time-score and reseting game */
 
 button {
     height: 35px;
@@ -72,7 +78,7 @@ button {
     color: #000000;
 }
 
-#time-tracking {
+#time-tracker {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;;
     font-size: x-large;
     font-weight: bold;
@@ -86,4 +92,11 @@ button {
     background-color: #07e80780;
     width: 400px;
     margin: auto;
+}
+
+#score-board {
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;;
+    font-size: large;
+    font-weight: bold;
+    margin: 20px 0;
 }

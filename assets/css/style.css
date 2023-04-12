@@ -10,6 +10,10 @@ h1 {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
 }
 
+#rules-box p {
+    line-height: 22px;
+}
+
 #game-board {
     width: 570px;
     height: 480px;
@@ -33,4 +37,35 @@ img {
     border-radius: 10%;
     float: left;
     margin: 5px;
+}
+
+button {
+    height: 35px;
+    font-family: "Roboto", "Trebuchet MS", sans-serif;
+    color: #ffffff;
+    text-align: center;
+    margin: 5px;
+    border: 2px solid #000000;
+}
+
+#submit {
+    width: 100px;
+    font-size: medium;
+    background-color: #ff0000;
+}
+
+#reset {
+    width: 150px;
+    font-size: large;
+    background-color: #0000ff;
+}
+
+#submit:hover {
+    background-color: #f05151;
+    color: #000000;
+}
+
+#reset:hover {
+    background-color: #6767f6;
+    color: #000000;
 }

@@ -1,17 +1,34 @@
+// Code on line 2 is taken from the Love Maths website here: XXXXXXXXXXXXXXX
+document.addEventListener("DOMContentLoaded", function()
+    let cards = document.getElementsByTagName("img");
+    let card = 
+)
 
+// Rules to stop user from clicking save on save 
+function runGame() {}
 
-runGame() {}
+function flipCard() {}
 
-checkAnswer() {}
+function checkAnswer() {}
 
-startTime() {}
+function startTime() {}
 
-stopTime() {}
+function stopTime() {}
 
-displayTime() {}
+function displayBestTime() {}
 
-saveTime() {}
+function addLatestTime() {
+    let saveButton = document.getElementById("submit");
+    saveButton.addEventListener("click", );
 
-resetGame() {}
+}
 
-resetTime() {}
+function resetGame() {
+    let resetButton = document.getElementById("reset");
+    resetButton.addEventListener("click", runGame);
+
+    if {}
+
+    function resetTime() {}
+}
+

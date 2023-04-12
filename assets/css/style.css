@@ -19,8 +19,8 @@ h1 {
 /* Game board with cards */
 
 #game-board {
-    width: 570px;
-    height: 480px;
+    width: 566px;
+    height: 453px;
     margin: auto;
     padding: 10px;
     background-color: #ffffff;

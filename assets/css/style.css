@@ -42,20 +42,23 @@ img {
 button {
     height: 35px;
     font-family: "Roboto", "Trebuchet MS", sans-serif;
+    font-weight: bold;
     color: #ffffff;
     text-align: center;
     margin: 5px;
     border: 2px solid #000000;
+    letter-spacing: 1px;
+    padding: 0;
 }
 
 #submit {
-    width: 100px;
+    width: 120px;
     font-size: medium;
     background-color: #ff0000;
 }
 
 #reset {
-    width: 150px;
+    width: 170px;
     font-size: large;
     background-color: #0000ff;
 }
@@ -68,4 +71,20 @@ button {
 #reset:hover {
     background-color: #6767f6;
     color: #000000;
+}
+
+#time-tracking {
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;;
+    font-size: x-large;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#score-message {
+    color: #000000;
+    font-weight: bold;
+    font-size: medium;
+    background-color: #07e80780;
+    width: 400px;
+    margin: auto;
 }

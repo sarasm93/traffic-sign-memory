@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+
+#game-board {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+.memory-card {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10%;
+    float: left;
+    margin: 5px;
+}

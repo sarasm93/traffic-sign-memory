@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&family=Roboto&display=swap');
 
 body {
     text-align: center;
-    font-family: overpass, "Trebuchet MS", sans-serif;
+    font-family: "Roboto", "Trebuchet MS", sans-serif;
+    background-color: #add8e6;
 }
 
 h1 {
-    font-family: "Roboto Condensed", "Trebuchet MS", sans-serif;
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
 }
 
 #game-board {
     width: 570px;
-    height: 570px;
+    height: 480px;
     margin: auto;
     padding: 10px;
+    background-color: #ffffff;
 }
 
 img {

@@ -44,7 +44,7 @@ img:hover {
 
 /* Result-box with time tracker and buttons for saving time-score and reseting game */
 
-button {
+.result-box button {
     height: 35px;
     font-family: "Roboto", "Trebuchet MS", sans-serif;
     font-weight: bold;

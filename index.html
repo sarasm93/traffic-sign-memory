@@ -16,12 +16,12 @@
             How fast can you do it?<br>The time starts when you click on the first card. Good luck! :D</p>
     </div>
     <div id="game-board">
-        <div class="memory-card">
-            <img src="assets/images/placeholder-car.png" id="card1" data-attribute="0" alt="First memory card">
-        </div>
-        <div class="memory-card">
+        <button class="card">
+            <img src="assets/images/placeholder-car.png" data-attribute="0" alt="First memory card">
+        </button>
+        <button class="card">
             <img src="assets/images/placeholder-car.png" data-attribute="0" alt="Second memory card">
-        </div>
+        </button>
         <div class="memory-card">
             <img src="assets/images/placeholder-car.png" data-attribute="0" alt="Third memory card">
         </div>
@@ -88,8 +88,8 @@
             <span id="best-time">Best time:</span>
             <span id="latest-time">Latest time:</span>
         </div>
-        <button type="submit" id="submit">Save score</button>
-        <button type="reset" id="reset">Play again!</button>
+        <button data-type="submit" id="submit">Save score</button>
+        <button data-type="reset" id="reset">Play again!</button>
     </div>
 
     <script src="assets/js/script.js"></script>

@@ -1,14 +1,14 @@
-// Code on line 2 (apart from the function name) is taken from the Love Maths website here: XXXXXXXXXXXXXXX
+// Code on line 3 (to load DOM content before anything else is done) is taken from the Love Maths lesson here: 
+// https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first
 document.addEventListener("DOMContentLoaded", function() { 
 
 let cards = document.getElementsByTagName("img");
 let resetButton = document.getElementById("reset");
 let saveButton = document.getElementById("submit");
-let imgDataAttr = Math.floor(Math.random() * 10);
 let firstImage = null;
 let secondImage = null;
 
-
+// Image pairs to replace placeholder images when img-elements in html are clicked.
 let imageSrc = [
     "assets/images/bicycle-lane.png",
     "assets/images/bicycle-lane.png", 
@@ -32,29 +32,26 @@ let imageSrc = [
     "assets/images/stop.png",
 ];
 
+// The code on lines 39-50 is taken from a Stackoverflow.com page, this page: 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+// A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
+// and use them to set and swap the indexes of the imageSrc-array elements.
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle.
+    let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
   
-      // Pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
   
-      // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-  
     return array;
 }
-  
 
-shuffle(imageSrc);
-// User this link to understand how to change src for images: 
+// Used this link to understand how to change src-attribute for images: 
 // https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
+shuffle(imageSrc);
 let index = 0;
 for (let card of cards) {
     card.src = imageSrc[index];

@@ -7,8 +7,9 @@ let resetButton = document.getElementById("reset");
 let saveButton = document.getElementById("submit");
 let firstImage = null;
 let secondImage = null;
+let placeholder = ["assets/images/placeholder-car.png"];
 
-// Image pairs to replace placeholder images when img-elements in html are clicked.
+// Image pairs to replace placeholder image when img-elements in html are clicked.
 let imageSrc = [
     "assets/images/bicycle-lane.png",
     "assets/images/bicycle-lane.png", 
@@ -32,6 +33,7 @@ let imageSrc = [
     "assets/images/stop.png",
 ];
 
+
 // The code on lines 39-50 is taken from a Stackoverflow.com page, this page: 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 // A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
@@ -49,11 +51,20 @@ function shuffle(array) {
     return array;
 }
 
+shuffle(imageSrc);
+
+for (let image of imageSrc) {
+    cards.innerHTML = '${imageSrc[image]}';
+    console.log(cards);
+};
+
+
+
 // Used this link to understand how to change src-attribute for images: 
 // https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
-shuffle(imageSrc);
 let index = 0;
 for (let card of cards) {
+    card.src.onload = placeholder[0];
     card.src = imageSrc[index];
     index++;
     card.addEventListener("click", function(event) {
@@ -76,11 +87,9 @@ for (let card of cards) {
             }
         }
     });
+    
 }
-
-
 //Reset game
-
 
 
 /* index of imageSrc should match a random number. 
@@ -92,7 +101,6 @@ the data-attribute of the img-tags should get at random number.
 The random number should match the index of the items in the imageSrc array.
 When a card/image is clicked the src-attribute of the img should be changed to 
 the the string in the imageSrc-array that has the */
-
 
 
 

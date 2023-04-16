@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let matchesCounter = 0;
     let boardBlocked = false;
     
-    
     // Image pairs to replace placeholder image when img-elements in html are clicked.
     let imageSrc = [
         "assets/images/bicycle-lane.png",
@@ -38,8 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "assets/images/stop.png",
     ];
     
-    
-    // The code on lines 41-52 is taken from a Stackoverflow.com page, this page: 
+    // The code on lines 44-57 is taken from this Stackoverflow.com page: 
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     // A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
     // and use them to set and swap the indexes of the imageSrc-array elements.
@@ -58,9 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     shuffle(imageSrc);
     
-    // The code on lines 58-67 has been copied from this Stackoverflow.com page (see Answer 2 in the link below) and then 
-    // modified slightly by changing the code and adding some new code.
-    // https://stackoverflow.com/questions/37187504/javascript-second-counter
+    // Time tracker counting the seconds it takes for the user to finish the game. Starts when the user clicks the first 
+    // card and stops when all matching card pairs are found. 
     function timer() {
         timeInterval = setInterval(function (){
             document.getElementById('time').innerHTML = time;
@@ -68,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000);
     };
     
-    
+    // Function to flip cards
     function flipCard(event){
         const card = event.target;
         const arrayIndex = parseInt(card.getAttribute('data-attribute'));
@@ -77,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         card.style.backgroundColor = "white";
     }
     
+    // Function to flip back cards
     function unFlipCards(firstCard, secondCard){
         console.info('should unflip');
         setTimeout(function(){
@@ -88,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1500);
     }
     
+    // Function to flip cards depending on user clicks
     function userPlay(event){
         if (boardBlocked === false){
             flipCard(event);
@@ -125,4 +124,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
+
+    // Loop to make all cards in the cards-array listen after user clicks
+    for (let card of cards) {
+        card.addEventListener("click", userPlay);
+    }
+
 });
+

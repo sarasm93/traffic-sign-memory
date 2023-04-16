@@ -36,11 +36,11 @@ img {
     border-radius: 10%;
     float: left;
     margin: 5px;
-    background-color: #0000ff;
+    background-color: #ffffff;
 }
 
 img:hover {
-    background-color: #f7f773;
+    background-color: #77d85d;
 }
 
 /* Result-box with time tracker and buttons for saving time-score and reseting game */

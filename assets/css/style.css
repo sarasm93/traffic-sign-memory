@@ -63,9 +63,9 @@ button {
     background-color: #ff0000;
 }
 
-#play {
+#reset {
     width: 170px;
-    font-size: large;
+    font-size: medium;
     background-color: #0000ff;
 }
 
@@ -74,13 +74,14 @@ button {
     color: #000000;
 }
 
-#play:hover {
+#reset:hover {
     background-color: #6767f6;
     color: #000000;
 }
 
 #time-tracker {
-    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;;
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
+    ;
     font-size: x-large;
     font-weight: bold;
     margin: 20px 0;
@@ -96,8 +97,123 @@ button {
 }
 
 #score-board {
-    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;;
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
+    ;
     font-size: large;
     font-weight: bold;
     margin: 20px 0;
+}
+
+/* Changes to styling to make the website look good on mobile devices (screen sizes between 320px and 480px */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+    /* Rules-box with heading */
+    h1 {
+        font-size: x-large;
+    }
+
+    #rules-box p {
+        font-size: small;
+        line-height: 20px;
+    }
+
+    /* Game board with cards */
+    #game-board {
+        width: 253px;
+        height: 315px;
+        padding: 5px;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+    }
+
+    /* Result-box with time tracker and buttons for saving time-score and reseting game */
+    button {
+        height: 25px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    #submit {
+        width: 90px;
+        font-size: x-small;
+    }
+
+    #reset {
+        width: 140px;
+        font-size: x-small;
+    }
+
+    #time-tracker {
+        font-size: medium;
+        margin: 10px 0;
+    }
+
+    #result-message {
+        font-size: medium;
+        width: 200px;
+    }
+
+    #score-board {
+        font-size: small;
+        margin: 10px 0;
+    }
+}
+
+/* Changes to styling to make the website look good on tablet devices (screen sizes between 481px and 768px*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    /* Rules-box with heading */
+    #rules-box p {
+        font-size: small;
+        line-height: 20px;
+    }
+
+    /* Game board with cards */
+    #game-board {
+        width: 416px;
+        height: 333px;
+        padding: 5px;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+    }
+
+    /* Result-box with time tracker and buttons for saving time-score and reseting game */
+    button {
+        height: 25px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    #submit {
+        width: 115px;
+        font-size: small;
+    }
+
+    #reset {
+        width: 155px;
+        font-size: small;
+    }
+
+    #time-tracker {
+        font-size: large;
+        margin: 15px 0;
+    }
+
+    #result-message {
+        font-size: large;
+        width: 200px;
+    }
+
+    #score-board {
+        font-size: medium;
+        margin: 10px 0;
+    }
 }

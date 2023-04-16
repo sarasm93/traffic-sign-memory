@@ -138,7 +138,4 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let card of cards) {
         card.addEventListener("click", userPlay);
     }
-
-
-
 });

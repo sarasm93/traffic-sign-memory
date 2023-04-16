@@ -39,14 +39,14 @@ let imageSrc = [
 ];
 
 
-// The code on lines 41-52 is taken from a Stackoverflow.com page, this page: 
+// The code on lines 41-52 is taken from this Stackoverflow.com page: 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 // A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
 // and use them to set and swap the indexes of the imageSrc-array elements.
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
-  
+
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
   
@@ -54,67 +54,62 @@ function shuffle(array) {
         array[randomIndex], array[currentIndex]];
     }
     return array;
-}
+};
 
 shuffle(imageSrc);
 
-// The code on lines 58-67 has been copied from this Stackoverflow.com page (see Answer 2 in the link below) and then 
-// modified slightly by changing the code and adding some new code.
-// https://stackoverflow.com/questions/37187504/javascript-second-counter
+// Time counter counting the seconds it takes for the user to find all matching pairs and then stops.
 function timer() {
-    timeInterval = setInterval(function (){
+    timeInterval = setInterval(function() {
         document.getElementById('time').innerHTML = time;
         time++;
     }, 1000);
 };
 
-
-function flipCard(event){
+// Functions to flip the cards 
+function flipCard(event) {
     const card = event.target;
     const arrayIndex = parseInt(card.getAttribute('data-attribute'));
     console.info(`Flip index ${arrayIndex}`);
     card.src = imageSrc[arrayIndex];
-}
+};
 
-function unFlipCards(firstCard, secondCard){
+function unFlipCards(firstCard, secondCard) {
     console.info('should unflip');
-    setTimeout(function(){
+    setTimeout(function() {
         firstCard.src = 'assets/images/placeholder-car.png';
         secondCard.src = 'assets/images/placeholder-car.png';
         boardBlocked = false;
     }, 1500);
-    
-}
+};
 
 
-function userPlay(event){
-    if (boardBlocked === false){
+function userPlay(event) {
+    if (boardBlocked === false) {
         flipCard(event);
-        if (firstCard === null){
+        if (firstCard === null) {
             firstCard = event.target;
-            if (timerStarted === false){
+            if (timerStarted === false) {
                 timer();
                 timerStarted = true;
             }
-        }
-        else{
+        } else {
             boardBlocked = true;
-            if (secondCard === null){
+            if (secondCard === null) {
                 secondCard = event.target;
-                if (secondCard.src === firstCard.src){
+                if (secondCard.src === firstCard.src) {
                     matchesCounter++;
                     console.info(`Its a match ${matchesCounter}`);
                     firstCard.removeEventListener('click', userPlay);
                     secondCard.removeEventListener('click', userPlay);
                     boardBlocked = false;
-                    if(matchesCounter >= 10){
+                    if (matchesCounter >= 10) {
                         clearInterval(timeInterval);
-                        setTimeout(function(){
+                        setTimeout(function() {
                             alert(`You won in ${time} seconds`);
                         }, 1000)
                     }
-                }
-                else{
+                } else {
                     console.info('Its NOT a match');
                     unFlipCards(firstCard, secondCard);
                 }
@@ -124,29 +119,5 @@ function userPlay(event){
         }
     }
 }
-
-
-
-// Used this link to understand how to change src-attribute for images: 
-// https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
-
-let index = 0;
-for (let card of cards) {
-    // card.src = imageSrc[index];
-    // index++;
-    card.addEventListener("click", userPlay);
-}
-
-/* index of imageSrc should match a random number. 
-The random number should be the value of the data-attribute on the img-tags.
-When clicking a card/img the src-attribut should switch 
-or 
-
-the data-attribute of the img-tags should get at random number.
-The random number should match the index of the items in the imageSrc array.
-When a card/image is clicked the src-attribute of the img should be changed to 
-the the string in the imageSrc-array that has the */
-
-
 });
 

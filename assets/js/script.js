@@ -40,14 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // The code on lines 44-57 is taken from this Stackoverflow.com page: 
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     // A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
-    // and use them to set and swap the indexes of the imageSrc-array elements.
+    // and use them to set and swap indexes for the images in the imageSrc-array.
     function shuffle(array) {
         let currentIndex = array.length, randomIndex;
         while (currentIndex != 0) {
       
           randomIndex = Math.floor(Math.random() * currentIndex);
           currentIndex--;
-      
           [array[currentIndex], array[randomIndex]] = [
             array[randomIndex], array[currentIndex]];
         }
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // card and stops when all matching card pairs are found. 
     function timer() {
         timeInterval = setInterval(function (){
-            document.getElementById('time').innerHTML = time;
+            document.getElementById("time").innerHTML = time;
             time++;
         }, 1000);
     };
@@ -68,21 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to flip cards
     function flipCard(event){
         const card = event.target;
-        const arrayIndex = parseInt(card.getAttribute('data-attribute'));
+        const arrayIndex = parseInt(card.getAttribute("data-attribute"));
         console.info(`Flip index ${arrayIndex}`);
         card.src = imageSrc[arrayIndex];
-        card.style.backgroundColor = "white";
     }
     
     // Function to flip back cards
     function unFlipCards(firstCard, secondCard){
-        console.info('should unflip');
+        console.info("should unflip");
         setTimeout(function(){
-            firstCard.src = 'assets/images/placeholder-car.png';
-            secondCard.src = 'assets/images/placeholder-car.png';
+            firstCard.src = "assets/images/placeholder-car.png";
+            secondCard.src = "assets/images/placeholder-car.png";
             boardBlocked = false;
-            firstCard.style.backgroundColor = "blue";
-            secondCard.style.backgroundColor = "blue";
         }, 1500);
     }
     
@@ -99,13 +95,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else{
                 boardBlocked = true;
-                if (secondCard === null){debugger
+                if (secondCard === null){
                     secondCard = event.target;
                     if (secondCard.src === firstCard.src){
                         matchesCounter++;
                         console.info(`Its a match ${matchesCounter}`);
-                        firstCard.removeEventListener('click', userPlay);
-                        secondCard.removeEventListener('click', userPlay);
+                        firstCard.removeEventListener("click", userPlay);
+                        secondCard.removeEventListener("click", userPlay);
                         boardBlocked = false;
                         if(matchesCounter >= 10){
                             clearInterval(timeInterval);
@@ -115,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                     else{
-                        console.info('Its NOT a match');
+                        console.info("Its NOT a match");
                         unFlipCards(firstCard, secondCard);
                     }
                     firstCard = null;
@@ -125,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Loop to make all cards in the cards-array listen after user clicks
+    // Loop to make all cards in the cards-array listen for user clicks
     for (let card of cards) {
         card.addEventListener("click", userPlay);
     }

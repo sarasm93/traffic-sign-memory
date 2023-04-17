@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // The function on line 73-75 is taken from this W3Schools.com page (see link below) and has then been renamed.
     // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
     // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
-    function findBestTime(array){
+    function findBestTime(array) {
         return Math.min.apply(null, array);
     };
 
@@ -95,25 +95,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to reset the game board (unflip cards, reset time aso.) when clicking the reset button
     function resetGame() {
-        console.info("reseting game board");
-        for (let flippedCard of cards) {
+        if (matchesCounter != 0) {
+            alert("You haven't saved your time! If you want to save - click the red button saying 'Save time' before reseting the game!");
+            matchesCounter = 0;
+        } else {
+            console.info("reseting game board");
+            for (let flippedCard of cards) {
+                setTimeout(function () {
+                    flippedCard.src = "assets/images/placeholder-car.png";
+                    flippedCard.addEventListener("click", userPlay);
+                    boardBlocked = false;
+                }, 250);
+            };
             setTimeout(function () {
-                flippedCard.src = "assets/images/placeholder-car.png";
-                flippedCard.addEventListener("click", userPlay);
+                firstCard = null;
+                secondCard = null;
+                time = 0;
+                timerStarted = false;
+                clearInterval(timeInterval);
+                document.getElementById("time").innerHTML = "";
+                shuffle(imageSrc);
                 boardBlocked = false;
             }, 250);
         };
-        setTimeout(function () {
-            firstCard = null;
-            secondCard = null;
-            time = 0;
-            timerStarted = false;
-            matchesCounter = 0;
-            clearInterval(timeInterval);
-            document.getElementById("time").innerHTML = "";
-            shuffle(imageSrc);
-            boardBlocked = false;
-        }, 250);
     };
 
     // Function to flip cards to show traffic signs depending on user clicks on the cards
@@ -159,13 +163,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to save the (latest) time it took to finish the game
     function saveScore() {
-        if (finishedTime === null){
+        if (finishedTime === null) {
             console.log("The save button was clicked before the game was finished");
         } else {
-        let latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
-        timeArray.push(latestTime);
-        bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
-    }};
+            matchesCounter = 0;
+            let latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
+            timeArray.push(latestTime);
+            bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
+        }
+    };
 
     // Loop to make all cards in the cards-array on the game board listen for user clicks
     for (let card of cards) {

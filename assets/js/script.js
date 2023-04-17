@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let matchesCounter = 0;
     let boardBlocked = false;
     let finishedTime = null;
-    let bestTime = [];
+    let timeArray = [];
+    let bestTime = null;
 
     // Image pairs to replace placeholder image when img-elements in html are clicked.
     let imageSrc = [
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     shuffle(imageSrc);
 
     // Time tracker counting the seconds it takes for the user to finish the game. Starts when the user clicks the first 
-    // card and stops when all matching card pairs are found. 
+    // card and stops when all matching card pairs has been found. 
     function timer() {
         timeInterval = setInterval(function () {
             document.getElementById("time").innerHTML = time;
@@ -67,7 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     };
 
-    // Function to flip cards
+    // The function on line 73-75 is taken from this W3Schools.com page (see link below) and has then been renamed.
+    // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
+    // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
+    function findBestTime(array){
+        return Math.min.apply(null, array);
+    };
+
+    // Function to flip cards (show traffic signs)
     function flipCard(event) {
         const card = event.target;
         const arrayIndex = parseInt(card.getAttribute("data-attribute"));
@@ -85,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1350);
     };
 
-    // Function to reset the game board when clicking the reset button
+    // Function to reset the game board (unflip cards, reset time aso.) when clicking the reset button
     function resetGame() {
         console.info("reseting game board");
         for (let flippedCard of cards) {
@@ -108,12 +116,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 250);
     };
 
-    // Function to flip cards depending on user clicks on the cards
+    // Function to flip cards to show traffic signs depending on user clicks on the cards
     function userPlay(event) {
         if (boardBlocked === false) {
             flipCard(event);
             if (firstCard === null) {
                 firstCard = event.target;
+                firstCard.removeEventListener("click", userPlay);
                 if (timerStarted === false) {
                     timer();
                     timerStarted = true;
@@ -125,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (secondCard.src === firstCard.src) {
                         matchesCounter++;
                         console.info(`Its a match ${matchesCounter}`);
-                        firstCard.removeEventListener("click", userPlay);
                         secondCard.removeEventListener("click", userPlay);
                         boardBlocked = false;
                         if (matchesCounter >= 10) {
@@ -139,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else {
                         console.info("Its NOT a match");
                         unflipCards(firstCard, secondCard);
+                        firstCard.addEventListener("click", userPlay);
+                        secondCard.addEventListener("click", userPlay);
                     }
                     firstCard = null;
                     secondCard = null;
@@ -147,13 +157,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    // Function to save the (latest) time it took to finish the game
     function saveScore() {
         if (finishedTime === null){
             console.log("The save button was clicked before the game was finished");
         } else {
-        let latestTime = document.getElementById("latest-time").innerHTML = `${finishedTime} seconds`;
-        bestTime.push(latestTime);
-        
+        let latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
+        timeArray.push(latestTime);
+        bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
     }};
 
     // Loop to make all cards in the cards-array on the game board listen for user clicks

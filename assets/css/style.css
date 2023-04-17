@@ -52,15 +52,6 @@ img:hover {
     margin: 15px 0 5px 0;
 }
 
-#result-message {
-    color: #000000;
-    font-weight: bold;
-    font-size: medium;
-    background-color: #07e80780;
-    width: 400px;
-    margin: auto;
-}
-
 #score-board {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
     width: 566px;
@@ -157,11 +148,6 @@ button {
         margin: 10px 0;
     }
 
-    #result-message {
-        font-size: medium;
-        width: 200px;
-    }
-
     #score-board {
         font-size: small;
         margin: 10px 0;
@@ -210,11 +196,6 @@ button {
     #time-tracker {
         font-size: large;
         margin: 15px 0;
-    }
-
-    #result-message {
-        font-size: large;
-        width: 200px;
     }
 
     #score-board {

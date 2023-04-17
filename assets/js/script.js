@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let boardBlocked = false;
     let finishedTime = null;
     let timeArray = [];
+    //let saveCheck = null;
     let bestTime = null;
 
     // Image pairs to replace placeholder image when img-elements in html are clicked.
@@ -93,31 +94,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1350);
     };
 
-    // Function to reset the game board (unflip cards, reset time aso.) when clicking the reset button
-    function resetGame() {
-        if (matchesCounter != 0) {
+    /*Check if time is saved before reseting game. But only once. If the user doesn´t want to save it should not have to.
+    function checkIfTimeSaved() {
+        if (saveCheck = false) {
             alert("You haven't saved your time! If you want to save - click the red button saying 'Save time' before reseting the game!");
-            matchesCounter = 0;
-        } else {
-            console.info("reseting game board");
-            for (let flippedCard of cards) {
-                setTimeout(function () {
-                    flippedCard.src = "assets/images/placeholder-car.png";
-                    flippedCard.addEventListener("click", userPlay);
-                    boardBlocked = false;
-                }, 250);
-            };
+            saveCheck = true;
+        }
+        resetButton.addEventListener("click", resetGame);
+    };*/
+
+    // Function to reset the game board (unflip cards, reset time etc.) when clicking the reset button
+    function resetGame() {
+        console.info("reseting game board");
+        for (let flippedCard of cards) {
             setTimeout(function () {
-                firstCard = null;
-                secondCard = null;
-                time = 0;
-                timerStarted = false;
-                clearInterval(timeInterval);
-                document.getElementById("time").innerHTML = "";
-                shuffle(imageSrc);
+                flippedCard.src = "assets/images/placeholder-car.png";
+                flippedCard.addEventListener("click", userPlay);
                 boardBlocked = false;
             }, 250);
         };
+        setTimeout(function () {
+            firstCard = null;
+            secondCard = null;
+            time = 0;
+            timerStarted = false;
+            clearInterval(timeInterval);
+            matchesCounter = 0;
+            document.getElementById("time").innerHTML = "";
+            shuffle(imageSrc);
+            boardBlocked = false;
+        }, 250);
     };
 
     // Function to flip cards to show traffic signs depending on user clicks on the cards
@@ -130,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (timerStarted === false) {
                     timer();
                     timerStarted = true;
-                }
+                };
             } else {
                 boardBlocked = true;
                 if (secondCard === null) {
@@ -146,27 +152,28 @@ document.addEventListener("DOMContentLoaded", function () {
                             finishedTime = time;
                             setTimeout(function () {
                                 alert(`Great work! You found all card pairs in ${time} seconds!`);
-                            }, 500)
-                        }
+                                //saveCheck = false;
+                            }, 500);
+                        };
                     } else {
                         console.info("Its NOT a match");
                         unflipCards(firstCard, secondCard);
                         firstCard.addEventListener("click", userPlay);
                         secondCard.addEventListener("click", userPlay);
-                    }
+                    };
                     firstCard = null;
                     secondCard = null;
-                }
-            }
-        }
+                };
+            };
+        };
     };
 
     // Function to save the (latest) time it took to finish the game
-    function saveScore() {
+    function saveTime() {
         if (finishedTime === null) {
             console.log("The save button was clicked before the game was finished");
         } else {
-            matchesCounter = 0;
+            //saveCheck = true;
             let latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
             timeArray.push(latestTime);
             bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
@@ -181,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
     resetButton.addEventListener("click", resetGame);
 
-    // Listener that listens to user clicks on the save button and calls the saveScore function
-    saveButton.addEventListener("click", saveScore);
+    // Listener that listens to user clicks on the save button and calls the saveTime function
+    saveButton.addEventListener("click", saveTime);
 
 });

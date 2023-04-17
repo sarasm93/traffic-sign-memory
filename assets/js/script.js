@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
             [array[currentIndex], array[randomIndex]] = [
                 array[randomIndex], array[currentIndex]
             ];
-        }
+        };
         return array;
-    }
+    };
 
     shuffle(imageSrc);
 
@@ -71,19 +71,42 @@ document.addEventListener("DOMContentLoaded", function () {
         const arrayIndex = parseInt(card.getAttribute("data-attribute"));
         console.info(`Flip index ${arrayIndex}`);
         card.src = imageSrc[arrayIndex];
-    }
+    };
 
     // Function to flip back cards
-    function unFlipCards(firstCard, secondCard) {
+    function unflipCards(firstCard, secondCard) {
         console.info("should unflip");
         setTimeout(function () {
             firstCard.src = "assets/images/placeholder-car.png";
             secondCard.src = "assets/images/placeholder-car.png";
             boardBlocked = false;
         }, 1500);
-    }
+    };
 
-    // Function to flip cards depending on user clicks
+    // Function to reset the game board when clicking the reset button
+    function unflipAllCards() {
+        console.info("reseting game board");
+        for (let flippedCard of cards) {
+            setTimeout(function () {
+                flippedCard.src = "assets/images/placeholder-car.png";
+                flippedCard.addEventListener("click", userPlay);
+                boardBlocked = false;
+            }, 250);
+        };
+        setTimeout(function () {
+            firstCard = null;
+            secondCard = null;
+            time = 0;
+            timerStarted = false;
+            matchesCounter = 0;
+            clearInterval(timeInterval);
+            document.getElementById("time").innerHTML = "";
+            shuffle(imageSrc);
+            boardBlocked = false;
+        }, 250);
+    };
+
+    // Function to flip cards depending on user clicks on the cards
     function userPlay(event) {
         if (boardBlocked === false) {
             flipCard(event);
@@ -111,31 +134,28 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     } else {
                         console.info("Its NOT a match");
-                        unFlipCards(firstCard, secondCard);
+                        unflipCards(firstCard, secondCard);
                     }
                     firstCard = null;
                     secondCard = null;
                 }
             }
         }
-    }
-
-    function resetGame() {
-
     };
 
     function saveScore() {
 
     };
 
-    // Listener that listens to user clicks on the reset button and calls the resetGame function
-    resetButton.addEventListener("click", resetGame);
+    // Loop to make all cards in the cards-array on the game board listen for user clicks
+    for (let card of cards) {
+        card.addEventListener("click", userPlay);
+    }
+
+    // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
+    resetButton.addEventListener("click", unflipAllCards);
 
     // Listener that listens to user clicks on the save button and calls the saveScore function
     saveButton.addEventListener("click", saveScore);
 
-    // Loop to make all cards in the cards-array listen for user clicks
-    for (let card of cards) {
-        card.addEventListener("click", userPlay);
-    }
 });

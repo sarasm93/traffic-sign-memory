@@ -45,6 +45,36 @@ img:hover {
 
 /* Result-box with time tracker and buttons for saving time-score and reseting game */
 
+#time-tracker {
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+}
+
+#result-message {
+    color: #000000;
+    font-weight: bold;
+    font-size: medium;
+    background-color: #07e80780;
+    width: 400px;
+    margin: auto;
+}
+
+#score-board {
+    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
+    width: 566px;
+    height: 65px;
+    font-size: large;
+    font-weight: bold;
+    margin: auto;
+}
+
+#score-board div {
+    width: 50%;
+    float: left;
+}
+
 button {
     height: 35px;
     font-family: "Roboto", "Trebuchet MS", sans-serif;
@@ -77,31 +107,6 @@ button {
 #reset:hover {
     background-color: #6767f6;
     color: #000000;
-}
-
-#time-tracker {
-    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
-    ;
-    font-size: x-large;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-#result-message {
-    color: #000000;
-    font-weight: bold;
-    font-size: medium;
-    background-color: #07e80780;
-    width: 400px;
-    margin: auto;
-}
-
-#score-board {
-    font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
-    ;
-    font-size: large;
-    font-weight: bold;
-    margin: 20px 0;
 }
 
 /* Changes to styling to make the website look good on mobile devices (screen sizes between 320px and 480px */

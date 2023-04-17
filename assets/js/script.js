@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let timeInterval = null;
     let matchesCounter = 0;
     let boardBlocked = false;
+    let finishedTime = null;
+    let bestTime = [];
 
     // Image pairs to replace placeholder image when img-elements in html are clicked.
     let imageSrc = [
@@ -73,18 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
         card.src = imageSrc[arrayIndex];
     };
 
-    // Function to flip back cards
+    // Function to unflip cards (flip cards back to placholder car image)
     function unflipCards(firstCard, secondCard) {
         console.info("should unflip");
         setTimeout(function () {
             firstCard.src = "assets/images/placeholder-car.png";
             secondCard.src = "assets/images/placeholder-car.png";
             boardBlocked = false;
-        }, 1500);
+        }, 1350);
     };
 
     // Function to reset the game board when clicking the reset button
-    function unflipAllCards() {
+    function resetGame() {
         console.info("reseting game board");
         for (let flippedCard of cards) {
             setTimeout(function () {
@@ -128,9 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         boardBlocked = false;
                         if (matchesCounter >= 10) {
                             clearInterval(timeInterval);
+                            time--;
+                            finishedTime = time;
                             setTimeout(function () {
-                                alert(`You won in ${time} seconds`);
-                            }, 200)
+                                alert(`Great work! You found all card pairs in ${time} seconds!`);
+                            }, 500)
                         }
                     } else {
                         console.info("Its NOT a match");
@@ -144,8 +148,13 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function saveScore() {
-
-    };
+        if (finishedTime === null){
+            console.log("The save button was clicked before the game was finished");
+        } else {
+        let latestTime = document.getElementById("latest-time").innerHTML = `${finishedTime} seconds`;
+        bestTime.push(latestTime);
+        
+    }};
 
     // Loop to make all cards in the cards-array on the game board listen for user clicks
     for (let card of cards) {
@@ -153,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
-    resetButton.addEventListener("click", unflipAllCards);
+    resetButton.addEventListener("click", resetGame);
 
     // Listener that listens to user clicks on the save button and calls the saveScore function
     saveButton.addEventListener("click", saveScore);

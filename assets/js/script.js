@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "assets/images/stop.png",
     ];
 
-    // The code on lines 44-57 is taken from this Stackoverflow.com page: 
+    // The code on lines 48-59 is taken from this Stackoverflow.com page: 
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     // A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
     // and use them to set and swap indexes for the images in the imageSrc-array.

@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /*Check if time is saved before reseting game. But only once. If the user doesn´t want to save it should not have to.
     function checkIfTimeSaved() {
         if (saveCheck = false) {
-            alert("You haven't saved your time! If you want to save - click the red button saying 'Save time' before reseting the game!");
+            alert('You haven't saved your time! To save - click the red "Save time"-button. If you don´t want to save - click the reset button again');
             saveCheck = true;
         }
         resetButton.addEventListener("click", resetGame);

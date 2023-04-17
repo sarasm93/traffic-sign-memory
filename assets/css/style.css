@@ -55,15 +55,20 @@ img:hover {
 #score-board {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
     width: 566px;
-    height: 65px;
-    font-size: large;
-    font-weight: bold;
     margin: auto;
 }
 
-#score-board div {
+#score-board p {
     width: 50%;
     float: left;
+    line-height: 25px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#buttons {
+    width: 566px;
+    margin: auto;
 }
 
 button {
@@ -81,7 +86,7 @@ button {
 #submit {
     width: 120px;
     font-size: medium;
-    background-color: #ff0000;
+    background-color: #b30000;
 }
 
 #reset {
@@ -127,6 +132,30 @@ button {
     }
 
     /* Result-box with time tracker and buttons for saving time-score and reseting game */
+    #time-tracker {
+        font-size: medium;
+        margin: 10px 0;
+    }
+
+    #score-board {
+        width: 253px;
+        margin: auto;
+    }
+
+    #score-board p {
+        width: 100%;
+        float: none;
+        font-size: small;
+        line-height: 10px;
+        margin: 8px 0;
+    }
+
+    #buttons {
+        width: 253px;
+        margin: auto;
+        padding: 15px 0 0 0;
+    }
+
     button {
         height: 25px;
         margin-bottom: 15px;
@@ -141,16 +170,6 @@ button {
     #reset {
         width: 140px;
         font-size: x-small;
-    }
-
-    #time-tracker {
-        font-size: medium;
-        margin: 10px 0;
-    }
-
-    #score-board {
-        font-size: small;
-        margin: 10px 0;
     }
 }
 
@@ -177,6 +196,30 @@ button {
     }
 
     /* Result-box with time tracker and buttons for saving time-score and reseting game */
+    #time-tracker {
+        font-size: large;
+        margin: 15px 0;
+    }
+
+    #score-board {
+        width: 416px;
+        margin: auto;
+    }
+
+    #score-board p {
+        width: 100%;
+        float: none;
+        font-size: medium;
+        line-height: 15px;
+        margin: 8px 0;
+    }
+
+    #buttons {
+        width: 416px;
+        margin: auto;
+        padding: 15px 0 0 0;
+    }
+
     button {
         height: 25px;
         margin-bottom: 15px;
@@ -191,15 +234,5 @@ button {
     #reset {
         width: 155px;
         font-size: small;
-    }
-
-    #time-tracker {
-        font-size: large;
-        margin: 15px 0;
-    }
-
-    #score-board {
-        font-size: medium;
-        margin: 10px 0;
     }
 }

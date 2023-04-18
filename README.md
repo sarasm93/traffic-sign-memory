@@ -39,7 +39,7 @@ BILD
 ***
 The [WebAIM Contrast checker](https://webaim.org/resources/contrastchecker/) has been used to test that the contrast between the colors used is sufficient. The first red color (#ff0000) that I used for the "Save-time"-button didn´t pass one of the tests for normal sized text, but as it passed all other tests I dind´t change it at first. But later, when I saw that this affected the accessibility score in the Lighthouse test, I changed the red color to a deeper one passing all WebAIM Contrast checker tests.
 
-The site has been tested so that it works on different browsers. It has been tested on Google Chrome, Microsoft Edge, Firefox and Samsung Internet.
+The site has been tested so that it works on different browsers. It has been tested on Google Chrome, Microsoft Edge, Firefox and Samsung Internet. When checking it on Firefox on my phone the reset button text didn´t fit into the button. To solve this I made the button a little wider on smaller screen sizes (320px to 480px).
 
 I have confirmed that all event listeners works as intended and that all text is readable.
 
@@ -58,11 +58,11 @@ Validation of the HTML and CSS code didn´t return any errors or warnings.
 
 [JSHint](https://jshint.com/) was used to detect errors and problems in the Javascript code.
 
-When checking the Javascript code with JSHint there were warnings of unnecessary semicolons on several lines in the code, for example on line 57 KOOOOOOOLLLLLAA ATT DET ÄR RÄTT RAD FORTFARANDE after the `}`. To solve these warnings I simply removed the semicolons that JSHint warned about.
+When checking the Javascript code with JSHint there were warnings of unnecessary semicolons on several lines in the code. The semicolons were places after closing `}`. To solve these warnings I simply removed the semicolons that JSHint warned about.
 
 JSHint also sent several warnings like this one: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)" on several lines. To solve these warnings I had to go to the Configure menu at JSHint and check the "New Javascript features (ES6) option. After that, one last warning remained. It warned about a function inside the `for...loop` in the resetGame function that I used to iterate through the `cards` array in order to unflip the cards when the user wants to reset the game. The warning said "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (flippedCard, userPlay, boardBlocked)". Seeing this warning I realised the setTimeout function wasn´t needed inside the loop to get the functionality I wanted. So to solve the warning I simply moved the code inside the setTimeout function out of the function and placed it directly inside the loop, and then removed the setTimout function. 
 
-The deployed site returns no errors when validated. TTEEEEESSSTTAA EN SISTA GÅNG
+The deployed site returns no errors when validated.
 
 I also checked the accessibility of the site with Lighthouse in DevTools. The results for the final site is shown below.
  

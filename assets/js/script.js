@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timeArray.push(latestTime);
             bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
             timeSaved = true;
+            finishedTime = null;
         }
     }
 

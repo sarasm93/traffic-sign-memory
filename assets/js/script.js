@@ -169,18 +169,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-        // Function to save the (latest) time it took to finish the game
-        function saveTime() {
-            if (finishedTime === null) {
-                console.log("The save button was clicked before the game was finished");
-                alert("You did not finish the game yet. Keep going, you got this! :)");
-            } else {
-                latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
-                timeArray.push(latestTime);
-                bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
-                timeSaved = true;
-            }
+    // Function to save the (latest) time it took to finish the game
+    function saveTime() {
+        if (finishedTime === null) {
+            console.log("The save button was clicked before the game was finished");
+            alert("You did not finish or start the game yet :)");
+        } else {
+            latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
+            timeArray.push(latestTime);
+            bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
+            timeSaved = true;
         }
+    }
 
     // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
     resetButton.addEventListener("click", resetGame);

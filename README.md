@@ -116,8 +116,6 @@ The site was deployed to Github Pages with the following three steps:
 ***
 ### **Content and design**
 
-Code from [W3Schools website section about grid view](https://www.w3schools.com/css/css_rwd_grid.asp) has been used in the style.css file to create a grid with columns and make the Traffic Sign Memory site responsive. Comments have been added in the code to show where the borrowed code is.
-
 Font: söker på "traffic signs speed limit" på google https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 + och tittar på vilken font de verkar ha, och ser om jag kan hitta den på googe fonts: https://fonts.google.com/
 --> landar i Overpass
 
@@ -125,17 +123,15 @@ Inspiration för hur ett memory game kan se ut - färger, ikoner, uppbyggnad: ht
 
 Inspiration till hur varje kort i memoriet kan se ut kommer från fontawesome där varje ikon är en knapp med rundade hörn som ändrar färg när man hovrar över: https://fontawesome.com/search?q=question&o=r&m=free
 
-För att komma igång med html:
-- Använder boilerplate för att skapa den första koden
-- tittar på Love Maths för att lägga till kopplingen till JS-scriptet <script src="assets/js/script.js"></script> : https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/a8ec361b95e94c25bf8a821654bd57bc/
+In order to get started with the html code I used the '!+tab' command to create a boilerplate html structure.
 
 I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first) and the code, shown in the lesson, for an event listener listening for the DOM content to be loaded: `document.addEventListener("DOMContentLoaded", function () {`. I use this line of code at the very top of my script.js file.
 
-I also used the Love Running website LÄNK and the Love Maths website LÄNK to figure out that Setting `width:`, `height:` and `margin: auto` on the game board `div` can be used to align the cards to the center of the screen. 
+I also used the [Love Running website](LÄNK) and the [Love Maths website](LÄNK) to figure out that setting `width:`, `height:` and `margin: auto` on the game board `div` can be used to align the cards to the center of the screen. 
 
-The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.com page](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array). The code is used to shuffle the images on the game board by creating two variables (one with a value of a random number) and use them to set and swap indexes for the images in the imageSrc-array. ÄR DETTA RÄÄÄÄÄÄÄTTTTT??!
+The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.com page](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) and used to shuffle the images on the game board.
 
-The function on line 73-75 in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
+The function on line 80-82 in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
 
 För att förstå hur data-attribut funkar:
 - https://www.w3schools.com/tags/att_global_data.asp

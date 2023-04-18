@@ -44,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // The code on lines 48-59 is taken from this Stackoverflow.com page: 
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-    // A function to shuffle the images on the game board by creating two variables (one with a value of a random number) 
-    // and use them to set and swap indexes for the images in the imageSrc-array.
+    // A function to shuffle the images on the game board.
     function shuffle(array) {
         let currentIndex = array.length,
             randomIndex;
@@ -73,13 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("time").innerHTML = time;
             time++;
         }, 1000);
-    }
-
-    // The function on line 73-75 is taken from this W3Schools.com page (see link below) and has then been renamed.
-    // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
-    // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
-    function findBestTime(array) {
-        return Math.min.apply(null, array);
     }
 
     // Function to flip cards (show traffic signs)
@@ -169,7 +161,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to save the (latest) time it took to finish the game
+     // The function on line 80-82 is taken from this W3Schools.com page (see link below) and has then been renamed.
+    // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
+    // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
+    function findBestTime(array) {
+        return Math.min.apply(null, array);
+    }
+
+    // Function to save and show the (latest) time it took to finish the game and also find, save and show the best time 
     function saveTime() {
         if (finishedTime === null) {
             console.log("The save button was clicked before the game was finished");

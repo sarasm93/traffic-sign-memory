@@ -75,7 +75,7 @@ img:hover {
     margin-bottom: 25px;
 }
 
-#buttons {
+#buttons-container {
     width: 566px;
     margin: auto;
 }
@@ -163,7 +163,7 @@ button {
         margin: 8px 0;
     }
 
-    #buttons {
+    #buttons-container {
         width: 300px;
         margin: auto;
         padding: 15px 0 0 0;
@@ -232,7 +232,7 @@ button {
         margin: 8px 0;
     }
 
-    #buttons {
+    #buttons-container {
         width: 416px;
         margin: auto;
         padding: 20px 0 0 0;

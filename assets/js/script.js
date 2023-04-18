@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const arrayIndex = parseInt(card.getAttribute("data-attribute"));
         console.info(`Flip index ${arrayIndex}`);
         card.src = imageSrc[arrayIndex];
+        card.alt = imageSrc;
+        console.info(`src ${card.alt}`);
     }
 
     // Function to unflip cards (flip cards back to placholder car image)
@@ -162,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to show 5 last scores
     function showScores(){
         const keys = Object.keys(localStorage);
-        while () {
             for (var key in keys.slice(Math.max(keys.length - 5, 0))){
             console.info(keys[key]);
             let td = document.createElement("td");
@@ -170,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let tr = document.createElement("tr");
             tr.appendChild(td);
             document.getElementById('scores').appendChild(tr);
-        }}
+        }
     }
 
     // Function to save the (latest) time it took to finish the game

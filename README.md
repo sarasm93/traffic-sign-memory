@@ -9,10 +9,13 @@ You can find the site here LÄNK.
 
 ## **Features**
 ***
-
 ### **Existing features**
 
-#### **The rules box with a header**
+#### **The Header and The Rules Box**
+
+Contains the name of the game at the very top of the page where the user would expect it to be. Directly beneth the name, the rules of the game is found, so that the user can start playing almost directly after getting to the page. The logo and navigation bar together give the user the name of the site and where different information can be found. The header provides links to all pages of the site to easily navigate between them. The logo is a link to the home page and the navigation bar links to the other pages; Classes and Sign up.
+
+The links turn pink or blue when hovering over them, indicating to the user that the object is clickable.
 
 #### **The Game Board**
 
@@ -20,7 +23,7 @@ You can find the site here LÄNK.
 
 ### **Future features**
 
-- FYLL PÅ MED NÅGRA FÖRSLAG HÄR
+- Add game levels with different numbers of cards
 
 ## **Testing**
 ***

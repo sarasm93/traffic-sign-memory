@@ -60,6 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     shuffle(imageSrc);
 
+    // Loop to make all cards in the cards-array on the game board listen for user clicks
+    for (let card of cards) {
+        card.addEventListener("click", userPlay);
+    }
+
     // Time tracker counting the seconds it takes for the user to finish the game. Starts when the user clicks the first 
     // card and stops when all matching card pairs has been found. 
     function timer() {
@@ -106,13 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to reset the game board (unflip cards, reset time etc.) when clicking the reset button
     function resetGame() {
         console.info("reseting game board");
-        for (let flippedCard of cards) {
+        cards.forEach((card) => {
             setTimeout(function () {
-                flippedCard.src = "assets/images/placeholder-car.png";
-                flippedCard.addEventListener("click", userPlay);
+                card.src = "assets/images/placeholder-car.png";
+                card.addEventListener("click", userPlay);
                 boardBlocked = false;
             }, 250);
-        }
+        });
         setTimeout(function () {
             firstCard = null;
             secondCard = null;
@@ -178,11 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
             timeArray.push(latestTime);
             bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
         }
-    }
-
-    // Loop to make all cards in the cards-array on the game board listen for user clicks
-    for (let card of cards) {
-        card.addEventListener("click", userPlay);
     }
 
     // Listener that listens to user clicks on the reset button and calls the unflipAllCards function

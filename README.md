@@ -48,13 +48,15 @@ Validation of the html and css code didn´t return any errors or warnings.
 
 When checking the javascript code with JSHint there were warnings of unnecessary semicolons on several lines in the code, for example on line 57 after the `}`. To solve these warnings I simply removed the semicolons that JSHint warned about.
 
+JSHint also sent several warnings like this one: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)" on several lines. To solve these warnings I had to go to the Configure menu at JSHint and check the "New Javascript features (ES6) option. After that, one last warning remained. It warned about a `for...loop` in the resetGame function that I used to iterate through the cards array in order to unflip the cards when the user wants to reset the game. The warning said "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (flippedCard, userPlay, boardBlocked)". I used [this Reddit page](https://www.reddit.com/r/learnjavascript/comments/7uz91c/comment/dtpuxt5/) to get a hint on how to solve this warning. Then I used [this MDN Web Docs page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach#converting_a_for_loop_to_foreach) to learn about the `forEach()` method and used this to convert the `for...loop` in the resetGame function to a `forEach()` method instead. This solved the warning.  
+
 I also checked the accessibility of the site with Lighthouse in DevTools. The results for the final page is shown below.
  
 INFOGA LIGHTHOUSE BILD
 
 When testing the site with Lighthouse the first time, the SEO score was 92 and a message was shown saying the page didn´t have any meta description. I added a meta description and keywords in the head in the html-file and the score increase to 100. 
 
-The first Lighthouse-test also showed an accessibility score of 95 and a message saying the background and foreground colors of the submit button didn´t have a sufficient contrast ratio. To solve this I changed the color (#ff0000) of the button to a deeper red (#b30000), checking with WebAIM Contrast checker to see when it was dark enough to get sufficient contrast against the white background of the game board. After this change had been made the accessibility score increased to 100. 
+The first Lighthouse-test also showed an accessibility score of 95 and a message saying the background and foreground colors of the submit button didn´t have a sufficient contrast ratio. To solve this I changed the color (#ff0000) of the button to a deeper red (#b30000), checking with WebAIM Contrast checker to see when it was dark enough to get sufficient contrast against the white text in the button. After this change had been made the accessibility score increased to 100. 
 
 The deployed site returns no errors when validated. EEEELLLLLLEEER?
 
@@ -64,21 +66,23 @@ In the beginning of building the site I had troubles flipping the cards and not 
 
 Trouble getting the alert message saying.......  
 
-The first version of the game had a :hover psuedo-class selector placed on the <img>-elements to change the background color when hovering the <img>-elements (cards). It also had functions in the javascript code that changed the background color of the <img>-elements when they were clicked (so that the traffic sign images had a different color then the placholder car image). This had to be done since all images used in the game have a "built in" transparent background. However, when playing the game I noticed that after the <img>-elements background color was changed with javascript the hover feature wasn´t there anymore. To solve this I.....
+The first version of the game had a :hover psuedo-class selector placed on the `img`-elements to change the background color when hovering the `img`-elements (cards). It also had functions in the javascript code that changed the background color of the `img`-elements when they were clicked (so that the traffic sign images had a different color then the placholder car image). This had to be done since all images used in the game have a "built in" transparent background. However, when playing the game I noticed that after the `img`-elements background color was changed with javascript the hover feature wasn´t there anymore. To solve this I.....
 
 ### **Resolved bugs**
 
-SKRIV OM TYPISKA SMÅSAKER SOM DYKER UPP SOM DU INTE FATTAR VARFÖR DE INTE FUNKAR, T.EX. NÅGON KONSTIG LINJE SOM SYNS OSV.
+When playing the game to test functionality I discovered that it was possible to get a match of cards by clicking on the same card twice or clicking on a pair of cards that had already been matched. I noticed that this was due to not removing the click event listener for the first card at the right time in the code (the event listener was removed after the second card was flipped). So to solve this I removed the event listener for the first card *directly* after it has been clicked, by adding `firstCard.removeEventListener("click", userPlay);`. 
 
-Sidan ser konstig ut på mentorsmöte 2 på mentorns skärm, men inte alls på min. Varför??
-
-When playing the game to test functionality I discovered that it was possible to get a match of cards by clicking on the same card twice or clicking on a pair of cards that have already been matched. I noticed that this was due to not removing the click event listener for the first card at the right time in the code, i.e. after the second card was flipped). So to solve this I removed the event listener for the first card *directly* after it has been clicked, by adding firstCard.removeEventListener("click", userPlay);. 
-
-When testing the site in Firefox and Microsoft Edge the traffic sign-images didn´t show but the placeholder car-image did. I discovered that the files had different formats; the traffic sign-images were .jpg-files and the placeholder car-image was a .png-fil. To solve this I just changed the format of the traffic sign-images to .png.
+When testing the site in Firefox and Microsoft Edge the traffic sign-images didn´t show but the placeholder car-image did. I discovered that the files had different formats; the traffic sign images were .jpg files and the placeholder car image was a .png file. To solve this I just changed the format of the traffic sign-images to .png.
 
 Problem med att få latest tim och best time att navigera sig rätt på mindre skärmstorlkar.
 
 No bugs have been idenitified in the deployed version.
+
+
+
+SKRIV OM TYPISKA SMÅSAKER SOM DYKER UPP SOM DU INTE FATTAR VARFÖR DE INTE FUNKAR, T.EX. NÅGON KONSTIG LINJE SOM SYNS OSV.
+
+Sidan ser konstig ut på mentorsmöte 2 på mentorns skärm, men inte alls på min. Varför??
 
 ## **Deployment**
 ***

@@ -85,16 +85,15 @@
     </div>
     <div id="result-box">
         <div id="time-tracker">
-            <span>Time:</span>
-            <span id="time"></span>
+            <p><span>Time:</span><span id="time"> -</span>  seconds</p>
+            
         </div>
         <div id="score-board">
             <div>
-                <p>Best time: <span id="best-time">-</span> seconds</p>
+                <p>Your last 5 scores:</p>
             </div>
-            <div>
-                <p>Latest time: <span id="latest-time">-</span> seconds</p>
-            </div>
+            <table id="scores">
+            </table>
         </div>
         <div id="buttons">
             <button data-type="submit" id="submit">Save time</button>

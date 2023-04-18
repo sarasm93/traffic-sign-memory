@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let matchesCounter = 0;
     let boardBlocked = false;
     let finishedTime = null;
-    //let saveCheck = null;
-    let latestTime = null;
-    let bestTime = null;
-    let timeArray = [];
-    let timeString = "";
+    let timeSaved = false;
 
     // Image pairs to replace placeholder image when img-elements in html are clicked.
     let imageSrc = [
@@ -76,13 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     }
 
-    // The function on line 73-75 is taken from this W3Schools.com page (see link below) and has then been renamed.
-    // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
-    // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
-    function findBestTime(array) {
-        return Math.min.apply(null, array);
-    }
-
     // Function to flip cards (show traffic signs)
     function flipCard(event) {
         const card = event.target;
@@ -101,34 +90,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1350);
     }
 
-    /*Check if time is saved before reseting game. But only once. If the user doesn´t want to save it should not have to.
-    function checkIfTimeSaved() {
-        if (saveCheck = false) {
-            alert('You haven't saved your time! To save - click the red "Save time"-button. If you don´t want to save - click the reset button again');
-            saveCheck = true;
-        }
-        resetButton.addEventListener("click", resetGame);
-    };*/
-
     // Function to reset the game board (unflip cards, reset time etc.) when clicking the reset button
     function resetGame() {
-        console.info("reseting game board");
-        for (let card of cards) {
-            card.src = "assets/images/placeholder-car.png";
-            card.addEventListener("click", userPlay);
-            boardBlocked = false;
+        let reset = true;
+        if (timeSaved === false && matchesCounter >= 10){
+            reset = confirm("Looks like you didn't save your play time. Do you want to continue to reset?");
         }
-        setTimeout(function () {
-            firstCard = null;
-            secondCard = null;
-            time = 0;
-            timerStarted = false;
-            clearInterval(timeInterval);
-            matchesCounter = 0;
-            document.getElementById("time").innerHTML = "";
-            shuffle(imageSrc);
-            boardBlocked = false;
-        }, 250);
+        if (reset === true){
+            console.info("reseting game board");
+            for (let card of cards) {
+                card.src = "assets/images/placeholder-car.png";
+                card.addEventListener("click", userPlay);
+                boardBlocked = false;
+            }
+            setTimeout(function () {
+                firstCard = null;
+                secondCard = null;
+                time = 0;
+                timerStarted = false;
+                clearInterval(timeInterval);
+                matchesCounter = 0;
+                document.getElementById("time").innerHTML = "";
+                shuffle(imageSrc);
+                boardBlocked = false;
+                timeSaved = false;
+            }, 250);
+        }
     }
 
     // Function to flip cards to show traffic signs depending on user clicks on the cards
@@ -157,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             finishedTime = time;
                             setTimeout(function () {
                                 alert(`Great work! You found all card pairs in ${time} seconds! Use the buttons at the bottom of the page to Save the time and Reset the game`);
-                                //saveCheck = false;
                             }, 500);
                         }
                     } else {
@@ -173,25 +159,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /*function addTimeToLocalStorage(string) {
-        localStorage.setItem("time", string);
-
-        return string;
+    // Function to show 5 last scores
+    function showScores(){
+        const keys = Object.keys(localStorage);
+        while () {
+            for (var key in keys.slice(Math.max(keys.length - 5, 0))){
+            console.info(keys[key]);
+            let td = document.createElement("td");
+            td.innerText = keys[key];
+            let tr = document.createElement("tr");
+            tr.appendChild(td);
+            document.getElementById('scores').appendChild(tr);
+        }}
     }
-
-    function getBestTime() {
-        let timeNumber = finishedTime;
-        timeString = timeNumber.toString();
-        addTimeToLocalStorage(timeString);
-        let localStorageArray = [];
-        for (let i = 0; i > localStorage.length; i++) {
-            localStorageArray[i] = localStorage.key(i) + localStorage.getItem(localStorage.key(i));
-        }
-        console.log(localStorageArray);
-        let sortedLocalStorageArray = localStorageArray.sort();
-        console.log(sortedLocalStorageArray);
-        return sortedLocalStorageArray
-    }*/
 
     // Function to save the (latest) time it took to finish the game
     function saveTime() {
@@ -199,21 +179,16 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("The save button was clicked before the game was finished");
             alert("You did not finish the game yet. Keep going, you got this! :)");
         } else {
-            //saveCheck = true;
-            latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
-            // getBestTime();
-            timeArray.push(latestTime);
-            bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
+            localStorage.setItem(finishedTime.toString(), finishedTime);
+            timeSaved = true;
         }
     }
-
-    //let string = "24"; let number = parseInt(string, 10); console.log(number);
-    // let nunmber = 24; let string = toString(number); console.log(string);
 
     // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
     resetButton.addEventListener("click", resetGame);
 
     // Listener that listens to user clicks on the save button and calls the saveTime function
     saveButton.addEventListener("click", saveTime);
+    showScores();
 
 });

@@ -59,8 +59,9 @@ img:hover {
 
 #score-board {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
-    width: 566px;
+    width: 100%;
     margin: auto;
+    display: inline-block;
 }
 
 #score-board p {

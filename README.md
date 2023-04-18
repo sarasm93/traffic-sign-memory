@@ -3,41 +3,49 @@ Traffic Sign Memory is a game that aims to make learning traffic signs easier an
 
 It is targeted towards adults who are in the process of getting a driver's license and adults who already have a driver's license but want to improve their ability to remember road signs. They can use it as an easy and fun way to remember road signs faster and better.
 
-SKRÄMKLIPP FRÅN RESPONSINATOR
+![An image of the Traffic Sign Memory site seen on different screens with different sizes](LÄÄÄÄÄNK)
 
-You can find the site here LÄNK.
+You can find the site [here](LÄÄÄÄÄNK).
 
 ## **Features**
 ***
 ### **Existing features**
 
-#### **The Header and The Rules Box**
+#### *The Header and The Rules Box*
 
-Contains the name of the game at the very top of the page where the user would expect it to be. Directly beneth the name, the rules of the game is found, so that the user can start playing almost directly after getting to the page. The logo and navigation bar together give the user the name of the site and where different information can be found. The header provides links to all pages of the site to easily navigate between them. The logo is a link to the home page and the navigation bar links to the other pages; Classes and Sign up.
+Contains the name of the game - the header - at the very top of the site where the user would expect it to be. The name makes it obvious to the user what type of memory game it is and it is provided in a font that looks like the font used on traffic signs. The rules of the game is found directly beneath the header, so that the user can start playing almost directly after getting to the site. 
 
-The links turn pink or blue when hovering over them, indicating to the user that the object is clickable.
+![An image of the header and the rules for the Traffic Sign Memory shown at the top of the site](LÄÄÄÄÄNK)
 
-#### **The Game Board**
+#### *The Game Board*
 
-#### **The Game Results**
+
+
+![An image of the game board with the cards facing down](LÄÄÄÄÄNK)
+![An image of the game board with the cards facing up](LÄÄÄÄÄNK)
+
+#### *The Game Results*
+
+
+
+BILD
 
 ### **Future features**
 
+- Add more cards, i.e. traffic signs
 - Add game levels with different numbers of cards
 
 ## **Testing**
 ***
 The [WebAIM Contrast checker](https://webaim.org/resources/contrastchecker/) has been used to test that the contrast between the colors used is sufficient. The first red color (#ff0000) that I used for the "Save-time"-button didn´t pass one of the tests for normal sized text, but as it passed all other tests I dind´t change it at first. But later, when I saw that this affected the accessibility score in the Lighthouse test, I changed the red color to a deeper one passing all WebAIM Contrast checker tests.
 
-The site has been tested so that it works on different browsers. It has been tested on Google Chrome, Microsoft Edge, Firefox and Samsung Internet. TESTAAAAAAAAAAA
+The site has been tested so that it works on different browsers. It has been tested on Google Chrome, Microsoft Edge, Firefox and Samsung Internet.
 
-I have confirmed that the links on the site are not broken and works as intended and that all text is readable.TESTAAAAAAAAAAA ELLER TA BORT?
+I have confirmed that all event listeners works as intended and that all text is readable.
 
-I have used the [Am I Responsive site](https://ui.dev/amiresponsive) from ui.dev and the DevTools toolbar to test responsiveness and make the site look good on different screen sizes.
+I have used the [Am I Responsive site](https://ui.dev/amiresponsive) from ui.dev and the DevTools toolbar to test responsiveness and make the site look good on different screen sizes. 
 
 Git was used for version control. Gitpod was used to write the code and the site was continuously preview using DevTools.
-
-FYLL PÅ MED MEEEEEERR
 
 ### **Validator testing**
 
@@ -46,23 +54,23 @@ I have validated my HTML and CSS code with the below websites.
 - HTML: [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 - CSS: [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
+Validation of the HTML and CSS code didn´t return any errors or warnings.
+
 [JSHint](https://jshint.com/) was used to detect errors and problems in the Javascript code.
 
-Validation of the html and css code didn´t return any errors or warnings.
+When checking the Javascript code with JSHint there were warnings of unnecessary semicolons on several lines in the code, for example on line 57 KOOOOOOOLLLLLAA ATT DET ÄR RÄTT RAD FORTFARANDE after the `}`. To solve these warnings I simply removed the semicolons that JSHint warned about.
 
-When checking the javascript code with JSHint there were warnings of unnecessary semicolons on several lines in the code, for example on line 57 after the `}`. To solve these warnings I simply removed the semicolons that JSHint warned about.
+JSHint also sent several warnings like this one: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)" on several lines. To solve these warnings I had to go to the Configure menu at JSHint and check the "New Javascript features (ES6) option. After that, one last warning remained. It warned about a function inside the `for...loop` in the resetGame function that I used to iterate through the `cards` array in order to unflip the cards when the user wants to reset the game. The warning said "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (flippedCard, userPlay, boardBlocked)". Seeing this warning I realised the setTimeout function wasn´t needed inside the loop to get the functionality I wanted. So to solve the warning I simply moved the code inside the setTimeout function out of the function and placed it directly inside the loop, and then removed the setTimout function. 
 
-JSHint also sent several warnings like this one: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)" on several lines. To solve these warnings I had to go to the Configure menu at JSHint and check the "New Javascript features (ES6) option. After that, one last warning remained. It warned about a function inside the `for...loop` in the resetGame function that I used to iterate through the cards array in order to unflip the cards when the user wants to reset the game. The warning said "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (flippedCard, userPlay, boardBlocked)". Seeing this warning I realised the setTimeout function wasn´t needed inside the loop to get the functionality I wanted. So to solve the warning I simply mocved the code inside the setTimeout function out of the function and placed it directly inside the loop, and then removed the setTimout function. 
+The deployed site returns no errors when validated. TTEEEEESSSTTAA EN SISTA GÅNG
 
-I also checked the accessibility of the site with Lighthouse in DevTools. The results for the final page is shown below.
+I also checked the accessibility of the site with Lighthouse in DevTools. The results for the final site is shown below.
  
 INFOGA LIGHTHOUSE BILD
 
-When testing the site with Lighthouse the first time, the SEO score was 92 and a message was shown saying the page didn´t have any meta description. I added a meta description and keywords in the head in the html-file and the score increase to 100. 
+When testing the site with Lighthouse the first time, the SEO score was 92 and a message was shown saying the site didn´t have any meta description. I added a meta description and keywords in the head in HTML code and the score increase to 100. 
 
 The first Lighthouse-test also showed an accessibility score of 95 and a message saying the background and foreground colors of the submit button didn´t have a sufficient contrast ratio. To solve this I changed the color (#ff0000) of the button to a deeper red (#b30000), checking with WebAIM Contrast checker to see when it was dark enough to get sufficient contrast against the white text in the button. After this change had been made the accessibility score increased to 100. 
-
-The deployed site returns no errors when validated. EEEELLLLLLEEER?
 
 ### **Resolved problems**
 
@@ -90,7 +98,7 @@ Sidan ser konstig ut på mentorsmöte 2 på mentorns skärm, men inte alls på m
 
 ## **Deployment**
 ***
-You can find the link to the live site here LÄNK.
+You can find the link to the live site [here](LÄÄÄÄÄNK).
 
 ÄNDRA NÅGOT I DETTA KAPITEL - NÅGOT SOM ÄNDRATS SEDAN FÖRRA GÅNGEN?
 
@@ -154,11 +162,11 @@ För att förstå att jag ska ha "placeholder"-bild på ett frågetecken som utg
 
 [Google Fonts](https://fonts.google.com/) was used to import 'Barlow Semi Condensed' and 'Roboto' fonts.
 
-The readme.md files for the [Love Maths website](https://github.com/Code-Institute-Solutions/readme-love-maths/blob/master/README.md) and the [ULTIMATE Rock Paper Scissors website](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/) has been used for inspiration for the content of the readme.md file for this site.
+The readme.md files for the [Love Maths website](https://github.com/Code-Institute-Solutions/readme-love-maths/blob/master/README.md) and the [ULTIMATE Rock Paper Scissors website](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/) has been used as inspiration for the content of the readme.md file for this site.
 
 ### **Images**
 
-The images of the traffic signs and the placeholder car image showed before cards are flipped have been taken from [Pixabay](https://pixabay.com/). The specific links to each image are listed below.
+The images of the traffic signs and the placeholder car image showed before cards are flipped to face up is taken from [Pixabay](https://pixabay.com/). The specific links to each image are listed below.
 
 - [placeholder-car.png](https://pixabay.com/vectors/auto-automobile-truck-car-2071876/)
 - [bicycle-lane.png](https://pixabay.com/vectors/bicycle-lane-bicycle-cycling-sign-160714/) 
@@ -180,5 +188,5 @@ I want to thank my mentor Antonio Rodriguez for guiding me when building this si
 - använd data-atribute för att kunna skapa memory boarden
 - använd localstorage för att stora scoren från förra spelet
 - få bilder att suffle - kopierar kod från stackoverflow:
-
+- hitta ett sätt att varna användaren om att den glömt spara tiden
  FORTSÄTT HÄR

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +8,7 @@
         content="Play this memory game to train your memory while updating it on the meaning of traffic signs">
     <meta name="keywords" content="memory game, traffic signs, learn traffic signs, play game, memory, game">
     <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Traffic Sign Memory</title>
 </head>
 
@@ -90,14 +90,15 @@
         </div>
         <div id="score-board">
             <div>
-                <p>Your last 5 scores:</p>
+                <p>Your best score: <span id="best-time"> -</span> seconds</p>
             </div>
-            <table id="scores">
-            </table>
+            <div>
+                <p>Your latest score: <span id="latest-time"> -</span> seconds</p>
+            </div>
         </div>
         <div id="buttons">
-            <button aria-label="Save time" data-type="submit" id="submit">Save time</button>
-            <button aria-label="Reset game board" data-type="reset" id="reset">Reset game board</button>
+            <button aria-label="Save" data-type="submit" id="submit">Save time</button>
+            <button aria-label="Reset" data-type="reset" id="reset">Reset game board</button>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

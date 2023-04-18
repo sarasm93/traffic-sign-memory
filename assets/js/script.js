@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveTime() {
         if (finishedTime === null) {
             console.log("The save button was clicked before the game was finished");
+            alert("You did not finish the game yet. Keep going, you got this! :)");
         } else {
             //saveCheck = true;
             let latestTime = document.getElementById("latest-time").innerHTML = finishedTime;

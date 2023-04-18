@@ -111,13 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to reset the game board (unflip cards, reset time etc.) when clicking the reset button
     function resetGame() {
         console.info("reseting game board");
-        cards.forEach((card) => {
-            setTimeout(function () {
-                card.src = "assets/images/placeholder-car.png";
-                card.addEventListener("click", userPlay);
-                boardBlocked = false;
-            }, 250);
-        });
+        for (let card of cards) {
+            card.src = "assets/images/placeholder-car.png";
+            card.addEventListener("click", userPlay);
+            boardBlocked = false;
+        }
         setTimeout(function () {
             firstCard = null;
             secondCard = null;
@@ -156,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             time--;
                             finishedTime = time;
                             setTimeout(function () {
-                                alert(`Great work! You found all card pairs in ${time} seconds!`);
+                                alert(`Great work! You found all card pairs in ${time} seconds! Use the buttons at the bottom of the page to Save the time and Reset the game`);
                                 //saveCheck = false;
                             }, 500);
                         }

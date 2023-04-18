@@ -116,6 +116,8 @@ The site was deployed to Github Pages with the following three steps:
 ***
 ### **Content and design**
 
+Code from [W3Schools website section about grid view](https://www.w3schools.com/css/css_rwd_grid.asp) has been used in the style.css file to create a grid with columns and make the Traffic Sign Memory site responsive. Comments have been added in the code to show where the borrowed code is.
+
 Font: söker på "traffic signs speed limit" på google https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 + och tittar på vilken font de verkar ha, och ser om jag kan hitta den på googe fonts: https://fonts.google.com/
 --> landar i Overpass
 

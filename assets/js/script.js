@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let matchesCounter = 0;
     let boardBlocked = false;
     let finishedTime = null;
-    let timeArray = [];
     //let saveCheck = null;
+    let latestTime = null;
     let bestTime = null;
+    let timeArray = [];
+    let timeString = "";
 
     // Image pairs to replace placeholder image when img-elements in html are clicked.
     let imageSrc = [
@@ -171,6 +173,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /*function addTimeToLocalStorage(string) {
+        localStorage.setItem("time", string);
+
+        return string;
+    }
+
+    function getBestTime() {
+        let timeNumber = finishedTime;
+        timeString = timeNumber.toString();
+        addTimeToLocalStorage(timeString);
+        let localStorageArray = [];
+        for (let i = 0; i > localStorage.length; i++) {
+            localStorageArray[i] = localStorage.key(i) + localStorage.getItem(localStorage.key(i));
+        }
+        console.log(localStorageArray);
+        let sortedLocalStorageArray = localStorageArray.sort();
+        console.log(sortedLocalStorageArray);
+        return sortedLocalStorageArray
+    }*/
+
     // Function to save the (latest) time it took to finish the game
     function saveTime() {
         if (finishedTime === null) {
@@ -178,11 +200,15 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("You did not finish the game yet. Keep going, you got this! :)");
         } else {
             //saveCheck = true;
-            let latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
+            latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
+            // getBestTime();
             timeArray.push(latestTime);
             bestTime = document.getElementById("best-time").innerHTML = findBestTime(timeArray);
         }
     }
+
+    //let string = "24"; let number = parseInt(string, 10); console.log(number);
+    // let nunmber = 24; let string = toString(number); console.log(string);
 
     // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
     resetButton.addEventListener("click", resetGame);

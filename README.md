@@ -1,6 +1,7 @@
 # **Traffic Sign Memory**
+Traffic Sign Memory is a game that aims to make learning traffic signs easier and more fun! Getting a drivers license is not the easiest of things - there is a lot to remember! And once you have the license you may not use some of the knowledge you gained in the process of getting the lisence in a long time, risking to forget it again. This Traffic Sign Memory game can help prevent this. By playing the game the user's memory is trained in two ways. It is trained to remember the position of the cards with the traffic signs on them, as the position is randomly set by the computor each time the game starts. As a result of this, the user's memory is also trained to better remember traffic signs by having to repeatedly look at them when clicking around to find the matching cards. 
 
-Traffic Sign Memory is a site that wants to make learning traffic signs more fun! ----------By offering dance classes in several different styles with high class instructors for young adults, the Studio Dancers site hopes to get more young people to stay active by discovering and stay in the amazing world of dance! It is targeted towards those how wants to start dancing and those who already love to dance to make them want to keep dancing! The site is useful for those who want to take a dance class, get information about which classes are offered, where and when they are held, price, etc. and register for a class.---------
+It is targeted towards adults who are in the process of getting a driver's license and adults who already have a driver's license but want to improve their ability to remember road signs. They can use it as an easy and fun way to remember road signs faster and better.
 
 SKRÄMKLIPP FRÅN RESPONSINATOR
 

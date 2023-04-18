@@ -12,6 +12,11 @@ h1 {
     font-family: "Barlow Semi Condensed", "Trebuchet MS", sans-serif;
 }
 
+#rules-box {
+    width: 700px;
+    margin: auto;
+}
+
 #rules-box p {
     line-height: 22px;
 }
@@ -113,9 +118,13 @@ button {
         font-size: x-large;
     }
 
+    #rules-box {
+        width: 300px;
+    }
+
     #rules-box p {
         font-size: small;
-        line-height: 20px;
+        line-height: 18px;
     }
 
     /* Game board with cards */
@@ -177,6 +186,10 @@ button {
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 
     /* Rules-box with heading */
+    #rules-box {
+        width: 460px;
+    }
+
     #rules-box p {
         font-size: small;
         line-height: 20px;

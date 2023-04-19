@@ -6,7 +6,7 @@ It is targeted towards adults who are in the process of getting a driver's licen
 
 ![An image of the Traffic Sign Memory site seen on different screens with different sizes](documentation/readme-intro-responsive.png)
 
-You can find the site [here](LÄÄÄÄÄNK).
+You can find the site [here](https://sarasm93.github.io/traffic-sign-memory/).
 
 ## **Features**
 ***
@@ -113,14 +113,14 @@ When testing the site with Firefox on a phone the text in the reset button didn�
 
 In the deployed version there is a known error in the console showing up each time the browser is refreshed, see image below. This error wasn´t there during almost the whole process of building the site. It is asking for a icon but as this site doesn´t have any icon the error can´t be fixed.
 
-![Image of error message in console](LÄÄÄÄÄNK)
+![Image of error message in console](documentation/readme-console-error.png)
 
 No other bugs have been idenitified in the deployed version.
 
 ## **Deployment**
 ***
 
-You can find the link to the live site [here](LÄÄÄÄÄNK).
+You can find the link to the live site [here](https://sarasm93.github.io/traffic-sign-memory/).
 
 The site was deployed to Github Pages with the following three steps:
 

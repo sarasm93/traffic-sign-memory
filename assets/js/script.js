@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-     // The function on line 80-82 is taken from this W3Schools.com page (see link below) and has then been renamed.
+    // The function on line 80-82 is taken from this W3Schools.com page (see link below) and has then been renamed.
     // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
     // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
     function findBestTime(array) {
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveTime() {
         if (finishedTime === null) {
             console.log("The save button was clicked before the game was finished");
-            alert("You did not finish or start the game yet :)");
+            alert("You did not finish or start/restart the game yet :)");
         } else {
             latestTime = document.getElementById("latest-time").innerHTML = finishedTime;
             timeArray.push(latestTime);

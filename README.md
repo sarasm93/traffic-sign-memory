@@ -15,34 +15,36 @@ You can find the site [here](LÄÄÄÄÄNK).
 
 Contains the name of the game - the header - at the very top of the site where the user would expect it to be. The name makes it obvious to the user what type of memory game it is and it is provided in a font that looks like the font used on traffic signs. The rules of and instructions to the game is found directly beneath the header, which is useful to the user so they can start playing almost directly after getting to the site. 
 
-![An image of the header and the rules for the Traffic Sign Memory shown at the top of the site](LÄÄÄÄÄNK)
+![An image of the header and the rules for the Traffic Sign Memory shown at the top of the site](documentation/readmed-header-rules.png)
 
 #### *The Game Board*
 
-This section of the site contains the game board which provieded the user with all memory cards in order to play the game. The cards are faced down showing a placeholder image of a car. As the site loads the images of traffic signs are randomly shuffled around by the computor on the sides of the cards that are facing down. Each card is a interactive button that the user can click. When clicked they flip to face up and show a traffic sign. When two cards have been flipped and the traffic signs didn´t match, the cards are automatically unflipped to face down so that it doesn´t have to be done by the user. This is done after almost 1,5 seconds, which is useful to the user as it gives some extra time to register which traffic signs were shown.   
+This section of the site contains the game board which provies the user with all memory cards in order to play the game. The cards are faced down showing a placeholder image of a car. As the site loads, the images of traffic signs are randomly shuffled around by the computor on the sides of the cards that are facing down. Each card is a interactive button that the user can click. When clicked, they flip to face up and show a traffic sign. When two cards have been flipped and the traffic signs don´t match, the cards are automatically unflipped to face down so that this doesn´t have to be done by the user. This is done after almost 1,5 seconds, which is useful to the user as it gives some extra time to register which traffic signs were shown.   
 
-When the user clicks the first button, the time tracker starts (counting seconds). When the user have found all matching pairs of cards the time stops and the user is informed by it with an alert message informing of the time it took to finish the game and how to save and restart the game.This is done so that the user clearly gets informed that the game was finished.
+![An image of the game board with the cards facing down](documentation/readmed-gameboard-unflipped.png)
+![An image of the game board with some cards facing up](documentation/readmed-gameboard-some-flipped.png)
+
+When the user clicks the first button, the time tracker starts (counting seconds). When the user have found all matching pairs of cards the time stops and the user is informed by it with an alert message informing of the time it took to finish the game and how to save and restart the game.This is done so that the user clearly knows that the game was finished.
+
+![An image of an alert message telling the user the game was finished](LÄÄÄÄÄNK)
 
 It is not possible to click a new card before cards that are already faced up and not matching are faced down again, making it easier for the user to keep track on where in the game they are. And the user cannot cheat by clicking on cards that are already matched and faced up to "find" a new match.
 
-The cards turn grey when hovered over them to make it easier for the user to see which card they´re about to click.
-
-![An image of the game board with the cards facing down](LÄÄÄÄÄNK)
-![An image of the game board with the cards facing up](LÄÄÄÄÄNK)
+The cards turn grey when hovered over, to make it easier for the user to see which card they are about to click.
 
 #### *The Game Results*
 
-This sections shows the time tracker, the saved time scores and buttons to save and reset the game. After the game is finished the user can se the time it took to finish at the top of this section. The user can click the save button and when doing this the latest time score is saved and will be shown below the time tracker to the right. The user is also provided with a best time score to the left, if playing the game several times. This is useful to the user as it adds excitement and makes it more fun to play. On smaller screens the best time score is shown above the latest time score, not beside it. 
+This section shows the time tracker, the saved time scores and buttons to save and reset the game. After the game is finished the user can see the time it took to finish at the top of this section. The user can click the red save button and when doing this the latest time score is saved and will be shown below the time tracker to the right. The user is also provided with a best time score to the left, if playing the game several times. This is useful to the user as it adds excitement and makes it more fun to play. On smaller screens the best time score is shown above the latest time score, not beside it. The save and reset button have clear colors to make them stand out from the background and remind the user to save and how to reset.
 
-If the user tries to save a score before finishing the game, an alert message will inform them and the user won´t be able to save, which is usefule to the user as it prevents cheating and therefore probably faster learning. An alert message will also show if the user tries to save before even starting the game. 
+![An image of the result section showing time being tracked and saved time scores](documentation/readmed-time-tracker-scores.png)
 
-The reset button resets the game, i.e. face the cards down, shuffles the traffic signs and resets the time tracker, so that the user can play as many times as it wants. This button can be clicked any time the user wants, which is useful if the user for example was interupted when playing. If the user forgets to save the score before clicking the reset button when finishing the game, an alert message will show in which the user can choose to be okay with not saving or go back to save before reseting. This is very useful to the user as it prevents loosing good scores.
+If the user tries to save a score before finishing the game, an alert message will inform them of this and the user won´t be able to save, which is useful to the user as it prevents cheating and therefore probably faster learning. An alert message will also show if the user tries to save before even starting the game. 
 
-The save and reset button have clear colors to make them stand out from the background and remind the user to save and how to reset.
+![An image of an alert message if the save button is clicked before finishing or starting game](LÄÄÄÄÄNK)
 
-................Insert screenshots of the project features, give a brief description of what each feature does and explain its value to the user.
+The reset button resets the game, i.e. faces the cards down, shuffles the traffic signs and resets the time tracker, so that the user can play over and over, to really learn the traffic signs. This button can be clicked any time the user wants, which is useful if the user for example was interrupted when playing. If the user forgets to save the score before clicking the reset button when finishing the game, an alert message will show in which the user can choose to be okay with not saving or go back to save before reseting. This is very useful to the user as it prevents loosing good scores. 
 
-![An image of the result section showing time being tracked and saved time scores](LÄÄÄÄÄNK)
+![An image of an alert message if the reset button is clicked before saving score](LÄÄÄÄÄNK)
 
 ### **Future features**
 Expansion of the game:
@@ -51,7 +53,7 @@ Expansion of the game:
 
 ## **Testing**
 ***
-The [WebAIM Contrast checker](https://webaim.org/resources/contrastchecker/) has been used to test that the contrast between the colors used is sufficient. The first red color (#ff0000) that I used for the "Save-time"-button didn´t pass one of the tests for normal sized text, but as it passed all other tests I dind´t change it at first. But later, when I saw that this affected the accessibility score in the Lighthouse test, I changed the red color to a deeper one passing all WebAIM Contrast checker tests.
+The [WebAIM Contrast checker](https://webaim.org/resources/contrastchecker/) has been used to test that the contrast between the colors used is sufficient. The first red color (#ff0000) that I used for the "Save-time"-button didn´t pass one of the tests for normal sized text, but as it passed all other tests I didn´t change it at first. But later, when I saw that this affected the accessibility score in the Lighthouse test, I changed the red color to a deeper one passing all WebAIM Contrast checker tests.
 
 The site has been tested so that it works on different browsers. The game has been played and works on Google Chrome, Microsoft Edge, Firefox and Samsung Internet. I have checked that the game results are always correct and that alert messages shows up as intended. I have also checked that the header, all instruction and alert-message text, results, text on the buttons and the traffic signs images are all readable and easy to understand.   
 
@@ -179,4 +181,4 @@ The images of the traffic signs and the placeholder car image showed before card
 
 ## **Acknowledgements**
 ***
-I want to thank my mentor Antonio Rodriguez for guiding me when building this site, for example helping with the use of data attributes, how to track time and to create options in alert message.
+I want to thank my mentor Antonio Rodriguez for guiding me when building this site, for example helping with the use of data attributes and shuffling, how to track time and to create options in alert message.

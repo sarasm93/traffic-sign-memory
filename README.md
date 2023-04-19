@@ -3,7 +3,7 @@ Traffic Sign Memory is a game that aims to make learning traffic signs easier an
 
 It is targeted towards adults who are in the process of getting a driver's license and adults who already have a driver's license but want to improve their ability to remember road signs. They can use it as an easy and fun way to remember road signs faster and better.
 
-![An image of the Traffic Sign Memory site seen on different screens with different sizes](LÄÄÄÄÄNK)
+![An image of the Traffic Sign Memory site seen on different screens with different sizes](documentation/readme-intro-responsive.png)
 
 You can find the site [here](LÄÄÄÄÄNK).
 
@@ -28,10 +28,11 @@ Contains the name of the game - the header - at the very top of the site where t
 
 
 
-BILD
+![An image of the result section showing time being tracked and saved time scores](LÄÄÄÄÄNK)
 
 ### **Future features**
 
+Expansion of the game:
 - Add more cards, i.e. traffic signs
 - Add game levels with different numbers of cards
 
@@ -39,11 +40,9 @@ BILD
 ***
 The [WebAIM Contrast checker](https://webaim.org/resources/contrastchecker/) has been used to test that the contrast between the colors used is sufficient. The first red color (#ff0000) that I used for the "Save-time"-button didn´t pass one of the tests for normal sized text, but as it passed all other tests I dind´t change it at first. But later, when I saw that this affected the accessibility score in the Lighthouse test, I changed the red color to a deeper one passing all WebAIM Contrast checker tests.
 
-The site has been tested so that it works on different browsers. It has been tested on Google Chrome, Microsoft Edge, Firefox and Samsung Internet. When checking it on Firefox on my phone the reset button text didn´t fit into the button. To solve this I made the button a little wider on smaller screen sizes (320px to 480px).
+The site has been tested so that it works on different browsers. The game has been played and works on Google Chrome, Microsoft Edge, Firefox and Samsung Internet. I have checked that the game results are always correct and that alert messages shows up as intended. I have also checked that the header, all instruction and alert-message text, results, text on the buttons and the traffic signs images are all readable and easy to understand.   
 
-I have confirmed that all event listeners works as intended and that all text is readable.
-
-I have used the [Am I Responsive site](https://ui.dev/amiresponsive) from ui.dev and the DevTools toolbar to test responsiveness and make the site look good on different screen sizes. 
+I have used the [Am I Responsive site](https://ui.dev/amiresponsive) from ui.dev and the DevTools toolbar to make sure the site is responsive and  looks good on different standard screen sizes. 
 
 Git was used for version control. Gitpod was used to write the code and the site was continuously preview using DevTools.
 
@@ -62,11 +61,15 @@ When checking the Javascript code with JSHint there were warnings of unnecessary
 
 JSHint also sent several warnings like this one: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)" on several lines. To solve these warnings I had to go to the Configure menu at JSHint and check the "New Javascript features (ES6) option. After that, one last warning remained. It warned about a function inside the `for...loop` in the resetGame function that I used to iterate through the `cards` array in order to unflip the cards when the user wants to reset the game. The warning said "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (flippedCard, userPlay, boardBlocked)". Seeing this warning I realised the setTimeout function wasn´t needed inside the loop to get the functionality I wanted. So to solve the warning I simply moved the code inside the setTimeout function out of the function and placed it directly inside the loop, and then removed the setTimout function. 
 
-The deployed site returns no errors when validated.
+The deployed site returns no errors when validated with JSHint. The following metrics is returned:
+- There are 13 functions in this file.
+- Function with the largest signature take 2 arguments, while the median is 0.
+- Largest function has 29 statements in it, while the median is 4.
+- The most complex function has a cyclomatic complexity value of 7 while the median is 1.
 
 I also checked the accessibility of the site with Lighthouse in DevTools. The results for the final site is shown below.
  
-INFOGA LIGHTHOUSE BILD
+![An image of the Lighthouse scores for the site](BIIIIIIIILLLLLDDD)
 
 When testing the site with Lighthouse the first time, the SEO score was 92 and a message was shown saying the site didn´t have any meta description. I added a meta description and keywords in the head in HTML code and the score increase to 100. 
 
@@ -76,25 +79,29 @@ The first Lighthouse-test also showed an accessibility score of 95 and a message
 
 In the beginning of building the site I had troubles flipping the cards and not shuffle them each time they were clicked. I tried using the onclick-method in combination with changing the src-attribute on the `img`-elements from the source for the placeholder image to the source of the traffic sign images. But finally it was solved by using a data-attribute on the <img>-elements in order for the........
 
-Trouble getting the alert message saying.......  
+Trouble getting the alert message saying.....  
 
-The first version of the game had a :hover psuedo-class selector placed on the `img`-elements to change the background color when hovering the `img`-elements (cards). It also had functions in the javascript code that changed the background color of the `img`-elements when they were clicked (so that the traffic sign images had a different color then the placholder car image). This had to be done since all images used in the game have a "built in" transparent background. However, when playing the game I noticed that after the `img`-elements background color was changed with javascript the hover feature wasn´t there anymore. To solve this I.....
+The game has a :hover psuedo-class selector placed on the `img`-elements to change the background color when hovering the `img`-elements (cards). The first version of the game also had functions in the javascript code that changed the background color of the `img`-elements when they were clicked (so that the traffic sign images had a different color then the placholder car image). This change in background color was done in javascript beacuse all images used in the game have a "built in" transparent background. However, when building the game and testing it´s functionality I noticed that after the `img`-elements background color was changed with javascript the hover effect didn´t work anymore. As the game works without changing the background when clicking the cards I just removed the functions changing the background color in javascript.
 
-### **Resolved bugs**
+
+
+
+MMMEEEERRR
+
+
+### **Bugs**
 
 When playing the game to test functionality I discovered that it was possible to get a match of cards by clicking on the same card twice or clicking on a pair of cards that had already been matched. I noticed that this was due to not removing the click event listener for the first card at the right time in the code (the event listener was removed after the second card was flipped). So to solve this I removed the event listener for the first card *directly* after it has been clicked, by adding `firstCard.removeEventListener("click", userPlay);`. 
 
 When testing the site in Firefox and Microsoft Edge the traffic sign-images didn´t show but the placeholder car-image did. I discovered that the files had different formats; the traffic sign images were .jpg files and the placeholder car image was a .png file. To solve this I just changed the format of the traffic sign-images to .png.
 
-Problem med att få latest tim och best time att navigera sig rätt på mindre skärmstorlkar.
+In the first version of the game, the game board had a white background around all the cards (like a white square). But on larger screens the white background didn´t follow where the cards were placed. As the white background was only a design choice and didn´t affect the functionality of the game, I removed it, and then actually thought it made the game look better.
 
-No bugs have been idenitified in the deployed version.
+When testing the site with Firefox on a phone the text in the reset button didn´t fit into the button very well; it was written on two lines instead of one. To solve this I made the button a bit wider for smaller screen sizes (320px to 480px) so that the text could fit on one line.
 
+In the deployed version there is a known error in the console showing up each time the browser is refreshed. This error wasn´t there during almost the whole process of building the site. It says "MMMMEEEEEDDEEELANDE", i.e. asking for a icon. As this site doesn´t have any icon the error can´t be fixed.
 
-
-SKRIV OM TYPISKA SMÅSAKER SOM DYKER UPP SOM DU INTE FATTAR VARFÖR DE INTE FUNKAR, T.EX. NÅGON KONSTIG LINJE SOM SYNS OSV.
-
-Sidan ser konstig ut på mentorsmöte 2 på mentorns skärm, men inte alls på min. Varför??
+No other bugs have been idenitified in the deployed version.
 
 ## **Deployment**
 ***
@@ -116,6 +123,11 @@ The site was deployed to Github Pages with the following three steps:
 ***
 ### **Content and design**
 
+
+NÅÅGOT MEER HÄR EFTER ATT JAG SÖKT PÅ EN JÄVLA MASSA IGÅR????
+
+
+
 In order to get started with the html code I used the '!+tab' command to create a boilerplate html structure.
 
 I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first) to get started with the javascript code. I also used this code (shown in the lesson) for an event listener listening for the DOM content to be loaded: `document.addEventListener("DOMContentLoaded", function () {`. I used this line of code at the very top of my script.js file.
@@ -126,7 +138,7 @@ The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.
 
 The function on line 80-82 in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
 
-To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to lern more.
+To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to lern more. And to better understand timing events in javascript I used [this W3Schools site](https://www.w3schools.com/js/js_timing.asp).
 
 I used this [google search for memory game](https://www.google.com/search?q=memory+game&rlz=1C1IBEF_svSE1046SE1046&sxsrf=APwXEdceULB4pIF0rDT7QQ1L7FSIh_13PA:1681194978841&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiI3ousm6H-AhVScvEDHe6uAAkQ_AUoAXoECAEQAw&biw=1536&bih=714&dpr=1.25) to get inspiration for the design and layout of the site. I also made a google search for [traffic signs speed limit](https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 ) trying to find what font is typically used on traffic signs, and then tried to find that font on [Google Fonts](https://fonts.google.com/).
 

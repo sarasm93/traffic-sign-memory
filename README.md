@@ -140,8 +140,6 @@ In order to get started with the html code I used the '!+tab' command to create 
 
 I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first) to get started with the javascript code. I also used this code (shown in the lesson) for an event listener listening for the DOM content to be loaded: `document.addEventListener("DOMContentLoaded", function () {`. I used this line of code at the very top of my script.js file.
 
-I also used the [Love Running website](LÄNK) and the [Love Maths website](LÄNK) to figure out that setting `width:`, `height:` and `margin: auto` on the game board `div` can be used to align the cards to the center of the screen. 
-
 The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.com page](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) and used to shuffle the traffic sign image sources in order to show them randomly on the game board.
 
 The function on line 167-169  in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.

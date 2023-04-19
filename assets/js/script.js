@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
             for (let card of cards) {
                 card.src = "assets/images/placeholder-car.png";
                 card.addEventListener("click", userPlay);
-                time = 0;
+                finishedTime = null;
                 boardBlocked = false;
             }
             setTimeout(function () {

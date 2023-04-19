@@ -116,16 +116,9 @@ The site was deployed to Github Pages with the following three steps:
 ***
 ### **Content and design**
 
-Font: söker på "traffic signs speed limit" på google https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 + och tittar på vilken font de verkar ha, och ser om jag kan hitta den på googe fonts: https://fonts.google.com/
---> landar i Overpass
-
-Inspiration för hur ett memory game kan se ut - färger, ikoner, uppbyggnad: https://www.google.com/search?q=memory+game&rlz=1C1IBEF_svSE1046SE1046&sxsrf=APwXEdceULB4pIF0rDT7QQ1L7FSIh_13PA:1681194978841&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiI3ousm6H-AhVScvEDHe6uAAkQ_AUoAXoECAEQAw&biw=1536&bih=714&dpr=1.25
-
-Inspiration till hur varje kort i memoriet kan se ut kommer från fontawesome där varje ikon är en knapp med rundade hörn som ändrar färg när man hovrar över: https://fontawesome.com/search?q=question&o=r&m=free
-
 In order to get started with the html code I used the '!+tab' command to create a boilerplate html structure.
 
-I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first) and the code, shown in the lesson, for an event listener listening for the DOM content to be loaded: `document.addEventListener("DOMContentLoaded", function () {`. I use this line of code at the very top of my script.js file.
+I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first) to get started with the javascript code. I also used this code (shown in the lesson) for an event listener listening for the DOM content to be loaded: `document.addEventListener("DOMContentLoaded", function () {`. I used this line of code at the very top of my script.js file.
 
 I also used the [Love Running website](LÄNK) and the [Love Maths website](LÄNK) to figure out that setting `width:`, `height:` and `margin: auto` on the game board `div` can be used to align the cards to the center of the screen. 
 
@@ -133,30 +126,9 @@ The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.
 
 The function on line 80-82 in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
 
-För att förstå hur data-attribut funkar:
-- https://www.w3schools.com/tags/att_global_data.asp
+To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to lern more.
 
-För att komma igång med JS:
-- vad jag ska göra först, nämligen att lägga addEventListener("DOMContentLoaded", function())-delen : Love Mats website och lektionen om add javascript: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first
-
-För att hitta att det finns en reset-type på button
-- bara skrev type i gitpod ochså gav den förslag. Sen googlade jag och fick bekräftat vad reset betyder här: https://www.w3schools.com/tags/tag_button.asp
-
-
-
-
-
-För att skapa korten - deras storlek, border, rundade kanter
-- tittar på Love Running projektet i Gitpod och minns tillbaks hur man gjorde - använder inte koden men tittar för att komma ihåg hur man gör 
-
-För att förstå hur jag ska få tiden som räknas (via JS) bredvid ordet Time: som finns i html
-- tittar på Love Maths och ser att de använder span för att få operanderna och operatorn att vara på en rad.
-
-För att förstå att jag ska ha "placeholder"-bild på ett frågetecken som utgångs-bild i html:
-- used Code institutes "Rock, papper, scissors"-website: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/ 
-
-
-
+I used this [google search for memory game](https://www.google.com/search?q=memory+game&rlz=1C1IBEF_svSE1046SE1046&sxsrf=APwXEdceULB4pIF0rDT7QQ1L7FSIh_13PA:1681194978841&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiI3ousm6H-AhVScvEDHe6uAAkQ_AUoAXoECAEQAw&biw=1536&bih=714&dpr=1.25) to get inspiration for the design and layout of the site. I also made a google search for [traffic signs speed limit](https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 ) trying to find what font is typically used on traffic signs, and then tried to find that font on [Google Fonts](https://fonts.google.com/).
 
 [Google Fonts](https://fonts.google.com/) was used to import 'Barlow Semi Condensed' and 'Roboto' fonts.
 
@@ -182,9 +154,4 @@ The images of the traffic signs and the placeholder car image showed before card
 
 ## **Acknowledgements**
 ***
-I want to thank my mentor Antonio Rodriguez for guiding me when building this site to make 
-- använd data-atribute för att kunna skapa memory boarden
-- använd localstorage för att stora scoren från förra spelet
-- få bilder att suffle - kopierar kod från stackoverflow:
-- hitta ett sätt att varna användaren om att den glömt spara tiden
- FORTSÄTT HÄR
+I want to thank my mentor Antonio Rodriguez for guiding me when building this site, for example helping with the use of data attributes, how to track time and to create options in alert message.

@@ -1,4 +1,5 @@
 # **Traffic Sign Memory**
+
 Traffic Sign Memory is a game that aims to make learning traffic signs easier and more fun! Getting a drivers license is not the easiest of things - there is a lot to remember! And once you have the license you may not use some of the knowledge you gained in the process of getting the lisence in a long time, risking to forget it again. This Traffic Sign Memory game can help prevent this. By playing the game the user's memory is trained in two ways. It is trained to remember the position of the cards with the traffic signs on them, as the position is randomly set by the computor each time the game starts. As a result of this, the user's memory is also trained to better remember traffic signs by having to repeatedly look at them when clicking around to find the matching cards. 
 
 It is targeted towards adults who are in the process of getting a driver's license and adults who already have a driver's license but want to improve their ability to remember road signs. They can use it as an easy and fun way to remember road signs faster and better.
@@ -47,17 +48,19 @@ The reset button resets the game, i.e. faces the cards down, shuffles the traffi
 ![An image of an alert message if the reset button is clicked before saving score](LÄÄÄÄÄNK)
 
 ### **Future features**
+
 Expansion of the game:
 - Add more cards, i.e. traffic signs
 - Add game levels with different numbers of cards
 
 ## **Testing**
 ***
+
 The [WebAIM Contrast checker](https://webaim.org/resources/contrastchecker/) has been used to test that the contrast between the colors used is sufficient. The first red color (#ff0000) that I used for the "Save-time"-button didn´t pass one of the tests for normal sized text, but as it passed all other tests I didn´t change it at first. But later, when I saw that this affected the accessibility score in the Lighthouse test, I changed the red color to a deeper one passing all WebAIM Contrast checker tests.
 
 The site has been tested so that it works on different browsers. The game has been played and works on Google Chrome, Microsoft Edge, Firefox and Samsung Internet. I have checked that the game results are always correct and that alert messages shows up as intended. I have also checked that the header, all instruction and alert-message text, results, text on the buttons and the traffic signs images are all readable and easy to understand.   
 
-I have used the [Am I Responsive site](https://ui.dev/amiresponsive) from ui.dev and the DevTools toolbar to make sure the site is responsive and  looks good on different standard screen sizes. 
+I have used the [Am I Responsive site](https://ui.dev/amiresponsive) from ui.dev and the DevTools toolbar to make sure the site is responsive and looks good on different standard screen sizes. 
 
 Git was used for version control. Gitpod was used to write the code and the site was continuously preview using DevTools.
 
@@ -92,17 +95,13 @@ The first Lighthouse-test also showed an accessibility score of 95 and a message
 
 ### **Resolved problems**
 
-In the beginning of building the site I had troubles flipping the cards and not shuffle them each time they were clicked. I tried using the onclick-method in combination with changing the src-attribute on the `img`-elements from the source for the placeholder image to the source of the traffic sign images. But finally it was solved by using a data-attribute on the <img>-elements in order for the........
+In the beginning of building the site I had troubles finding a way to randomly shuffle the traffic signs on the cards once when starting the game, and not shuffle the traffic signs on each card each time each card was clicked. I tried using the onclick-method on the `img`-elements. But finally it was solved by using the shuffle function from [Stackoverflow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)(see more in the credits section) and a separate function to flip the cards using data-attributes on the `img`-elements to get the image source from the shuffled array of traffic sign image sources.  
 
-Trouble getting the alert message saying.....  
+The game has a :hover psuedo-class selector placed on the `img`-elements to change the background color when hovering the `img`-elements (cards). The first version of the game also had functions in the javascript code that changed the background color of the `img`-elements when they were clicked (so that the traffic sign images had a different color then the placholder car image). This change in background color was done in javascript beacuse all images used in the game have a "built in" transparent background. However, when building the game and testing it´s functionality I noticed that after the `img`-elements background color was changed with javascript the hover effect didn´t work anymore. As the game works and looks good without changing the background when clicking the cards, I just removed the functions changing the background color in javascript.
 
-The game has a :hover psuedo-class selector placed on the `img`-elements to change the background color when hovering the `img`-elements (cards). The first version of the game also had functions in the javascript code that changed the background color of the `img`-elements when they were clicked (so that the traffic sign images had a different color then the placholder car image). This change in background color was done in javascript beacuse all images used in the game have a "built in" transparent background. However, when building the game and testing it´s functionality I noticed that after the `img`-elements background color was changed with javascript the hover effect didn´t work anymore. As the game works without changing the background when clicking the cards I just removed the functions changing the background color in javascript.
+I also had troubles getting the message that alerts the user that the time score hasn´t been saved (when clicking the reset button) to show only once, to not force the user to save a score if it doesn´t want to. It was solved by using the `confirm()` method to allow the user to choose what to do directly in the alert message. If the `confirm()` method hadn´t been used the user would of been sent back to the site and then gotten the same alert message again when clicking the reset button.  
 
-
-
-
-MMMEEEERRR
-
+event.target?????
 
 ### **Bugs**
 
@@ -120,6 +119,7 @@ No other bugs have been idenitified in the deployed version.
 
 ## **Deployment**
 ***
+
 You can find the link to the live site [here](LÄÄÄÄÄNK).
 
 ÄNDRA NÅGOT I DETTA KAPITEL - NÅGOT SOM ÄNDRATS SEDAN FÖRRA GÅNGEN?
@@ -138,22 +138,17 @@ The site was deployed to Github Pages with the following three steps:
 ***
 ### **Content and design**
 
-
-NÅÅGOT MEER HÄR EFTER ATT JAG SÖKT PÅ EN JÄVLA MASSA IGÅR????
-
-
-
 In order to get started with the html code I used the '!+tab' command to create a boilerplate html structure.
 
 I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/?child=first) to get started with the javascript code. I also used this code (shown in the lesson) for an event listener listening for the DOM content to be loaded: `document.addEventListener("DOMContentLoaded", function () {`. I used this line of code at the very top of my script.js file.
 
 I also used the [Love Running website](LÄNK) and the [Love Maths website](LÄNK) to figure out that setting `width:`, `height:` and `margin: auto` on the game board `div` can be used to align the cards to the center of the screen. 
 
-The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.com page](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) and used to shuffle the images on the game board.
+The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.com page](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) and used to shuffle the traffic sign image sources in order to show them randomly on the game board.
 
-The function on line 80-82 in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
+The function on line 167-169  in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
 
-To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to lern more. And to better understand timing events in javascript I used [this W3Schools site](https://www.w3schools.com/js/js_timing.asp).
+To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to learn more. To better understand timing events in javascript I used [this W3Schools site](https://www.w3schools.com/js/js_timing.asp). [This W3Schools site](https://www.w3schools.com/jsref/met_win_confirm.asp) was used to learn about the confirm-method.
 
 I used this [google search for memory game](https://www.google.com/search?q=memory+game&rlz=1C1IBEF_svSE1046SE1046&sxsrf=APwXEdceULB4pIF0rDT7QQ1L7FSIh_13PA:1681194978841&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiI3ousm6H-AhVScvEDHe6uAAkQ_AUoAXoECAEQAw&biw=1536&bih=714&dpr=1.25) to get inspiration for the design and layout of the site. I also made a google search for [traffic signs speed limit](https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 ) trying to find what font is typically used on traffic signs, and then tried to find that font on [Google Fonts](https://fonts.google.com/).
 

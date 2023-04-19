@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // The code on lines 48-59 is taken from this Stackoverflow.com page: 
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-    // A function to shuffle the images on the game board.
+    // A function to shuffle image source in the imageSrc array, i.e. to be able to show the traffic sign images randomly on the game board.
     function shuffle(array) {
         let currentIndex = array.length,
             randomIndex;
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // The function on line 80-82 is taken from this W3Schools.com page (see link below) and has then been renamed.
+    // The function on line 167-169 is taken from this W3Schools.com page (see link below) and has then been renamed.
     // https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min
     // Function to find the lowest value of the timeArray, i.e. the fastest time in which the game was finished
     function findBestTime(array) {
@@ -182,9 +182,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Listener that listens to user clicks on the reset button and calls the unflipAllCards function
+    // Listener that listens for user clicks on the reset button and calls the unflipAllCards function
     resetButton.addEventListener("click", resetGame);
 
-    // Listener that listens to user clicks on the save button and calls the saveTime function
+    // Listener that listens for user clicks on the save button and calls the saveTime function
     saveButton.addEventListener("click", saveTime);
 });

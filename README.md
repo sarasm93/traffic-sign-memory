@@ -87,7 +87,7 @@ The deployed site returns no errors when validated with JSHint. The following me
 
 I also checked the accessibility of the site with Lighthouse in DevTools. The results for the final site is shown below.
  
-![An image of the Lighthouse scores for the site](BIIIIIIIILLLLLDDD)
+![An image of the Lighthouse scores for the site](documentation/readme-lighthouse-score.png)
 
 When testing the site with Lighthouse the first time, the SEO score was 92 and a message was shown saying the site didn´t have any meta description. I added a meta description and keywords in the head in HTML code and the score increase to 100. 
 

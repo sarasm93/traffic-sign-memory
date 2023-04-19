@@ -101,8 +101,6 @@ The game has a :hover psuedo-class selector placed on the `img`-elements to chan
 
 I also had troubles getting the message that alerts the user that the time score hasn´t been saved (when clicking the reset button) to show only once, to not force the user to save a score if it doesn´t want to. It was solved by using the `confirm()` method to allow the user to choose what to do directly in the alert message. If the `confirm()` method hadn´t been used the user would of been sent back to the site and then gotten the same alert message again when clicking the reset button.  
 
-event.target??????????
-
 ### **Bugs**
 
 When playing the game to test functionality I discovered that it was possible to get a match of cards by clicking on the same card twice or clicking on a pair of cards that had already been matched. I noticed that this was due to not removing the click event listener for the first card at the right time in the code (the event listener was removed after the second card was flipped). So to solve this I removed the event listener for the first card *directly* after it has been clicked, by adding `firstCard.removeEventListener("click", userPlay);`. 
@@ -113,7 +111,9 @@ In the first version of the game, the game board had a white background around a
 
 When testing the site with Firefox on a phone the text in the reset button didn´t fit into the button very well; it was written on two lines instead of one. To solve this I made the button a bit wider for smaller screen sizes (320px to 480px) so that the text could fit on one line.
 
-In the deployed version there is a known error in the console showing up each time the browser is refreshed. This error wasn´t there during almost the whole process of building the site. It says "MMMMEEEEEDDEEELANDE", i.e. asking for a icon. As this site doesn´t have any icon the error can´t be fixed.
+In the deployed version there is a known error in the console showing up each time the browser is refreshed, see image below. This error wasn´t there during almost the whole process of building the site. It is asking for a icon but as this site doesn´t have any icon the error can´t be fixed.
+
+![Image of error message in console](LÄÄÄÄÄNK)
 
 No other bugs have been idenitified in the deployed version.
 
@@ -146,7 +146,7 @@ The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.
 
 The function on line 167-169  in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
 
-To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to learn more. To better understand timing events in javascript I used [this W3Schools site](https://www.w3schools.com/js/js_timing.asp). [This W3Schools site](https://www.w3schools.com/jsref/met_win_confirm.asp) was used to learn about the confirm-method.
+To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to learn more. To better understand timing events in javascript I used [this W3Schools site](https://www.w3schools.com/js/js_timing.asp). [This W3Schools site](https://www.w3schools.com/jsref/met_win_confirm.asp) was used to learn about the confirm-method. To better understand how `event.target` works I used [this website](https://www.educative.io/answers/what-is-eventtarget-in-javascript) to help me.
 
 I used this [google search for memory game](https://www.google.com/search?q=memory+game&rlz=1C1IBEF_svSE1046SE1046&sxsrf=APwXEdceULB4pIF0rDT7QQ1L7FSIh_13PA:1681194978841&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiI3ousm6H-AhVScvEDHe6uAAkQ_AUoAXoECAEQAw&biw=1536&bih=714&dpr=1.25) to get inspiration for the design and layout of the site. I also made a google search for [traffic signs speed limit](https://www.google.com/search?q=traffic+signs+speed+limit&tbm=isch&ved=2ahUKEwizu7ih86H-AhWOwioKHX3iAN4Q2-cCegQIABAA&oq=traffic+signs+speed+limit&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQgAQQEzIICAAQCBAeEBMyCAgAEAgQHhATUABYAGD44QZoA3AAeACAAViIAaYBkgEBMpgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=Elw1ZLPqMY6FqwH9xIPwDQ&bih=714&biw=1536&rlz=1C1IBEF_svSE1046SE1046 ) trying to find what font is typically used on traffic signs, and then tried to find that font on [Google Fonts](https://fonts.google.com/).
 

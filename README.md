@@ -142,7 +142,7 @@ I used this [Love Maths lesson](https://learn.codeinstitute.net/courses/course-v
 
 The code on lines 48-59 in the script.js file is taken from [this Stackoverflow.com page](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) and used to shuffle the traffic sign image sources in order to show them randomly on the game board.
 
-The function on line 167-169  in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
+The function on line 168-170 in the script.js file is taken from [this W3Schools.com page](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min) and has then been renamed. The function is used to find the lowest value of the variable `let timeArray` which is holding all the saved time scores, i.e. the function is used to find the fastest time in which the user has finished the game.
 
 To better understand how data-attributes work, I used [this W3Schools](https://www.w3schools.com/tags/att_global_data.asp) site to learn more. To better understand timing events in javascript I used [this W3Schools site](https://www.w3schools.com/js/js_timing.asp). [This W3Schools site](https://www.w3schools.com/jsref/met_win_confirm.asp) was used to learn about the confirm-method. To better understand how `event.target` works I used [this website](https://www.educative.io/answers/what-is-eventtarget-in-javascript) to help me.
 

@@ -27,7 +27,7 @@ This section of the site contains the game board which provies the user with all
 
 When the user clicks the first button, the time tracker starts (counting seconds). When the user have found all matching pairs of cards the time stops and the user is informed by it with an alert message informing of the time it took to finish the game and how to save and restart the game.This is done so that the user clearly knows that the game was finished.
 
-![An image of an alert message telling the user the game was finished](LÄÄÄÄÄNK)
+![An image of an alert message telling the user the game was finished](documentation/readme-alert-finished-game.png)
 
 It is not possible to click a new card before cards that are already faced up and not matching are faced down again, making it easier for the user to keep track on where in the game they are. And the user cannot cheat by clicking on cards that are already matched and faced up to "find" a new match.
 
@@ -41,11 +41,11 @@ This section shows the time tracker, the saved time scores and buttons to save a
 
 If the user tries to save a score before finishing the game, an alert message will inform them of this and the user won´t be able to save, which is useful to the user as it prevents cheating and therefore probably faster learning. An alert message will also show if the user tries to save before even starting the game. 
 
-![An image of an alert message if the save button is clicked before finishing or starting game](LÄÄÄÄÄNK)
+![An image of an alert message if the save button is clicked before finishing or starting game](documentation/readme-alert-notstarted-notfinished.png)
 
 The reset button resets the game, i.e. faces the cards down, shuffles the traffic signs and resets the time tracker, so that the user can play over and over, to really learn the traffic signs. This button can be clicked any time the user wants, which is useful if the user for example was interrupted when playing. If the user forgets to save the score before clicking the reset button when finishing the game, an alert message will show in which the user can choose to be okay with not saving or go back to save before reseting. This is very useful to the user as it prevents loosing good scores. 
 
-![An image of an alert message if the reset button is clicked before saving score](LÄÄÄÄÄNK)
+![An image of an alert message if the reset button is clicked before saving score](documentation/readme-alert-unsaved-game.png)
 
 ### **Future features**
 
@@ -101,7 +101,7 @@ The game has a :hover psuedo-class selector placed on the `img`-elements to chan
 
 I also had troubles getting the message that alerts the user that the time score hasn´t been saved (when clicking the reset button) to show only once, to not force the user to save a score if it doesn´t want to. It was solved by using the `confirm()` method to allow the user to choose what to do directly in the alert message. If the `confirm()` method hadn´t been used the user would of been sent back to the site and then gotten the same alert message again when clicking the reset button.  
 
-event.target?????
+event.target??????????
 
 ### **Bugs**
 
@@ -121,8 +121,6 @@ No other bugs have been idenitified in the deployed version.
 ***
 
 You can find the link to the live site [here](LÄÄÄÄÄNK).
-
-ÄNDRA NÅGOT I DETTA KAPITEL - NÅGOT SOM ÄNDRATS SEDAN FÖRRA GÅNGEN?
 
 The site was deployed to Github Pages with the following three steps:
 

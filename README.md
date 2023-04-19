@@ -16,14 +16,14 @@ You can find the site [here](LÄÄÄÄÄNK).
 
 Contains the name of the game - the header - at the very top of the site where the user would expect it to be. The name makes it obvious to the user what type of memory game it is and it is provided in a font that looks like the font used on traffic signs. The rules of and instructions to the game is found directly beneath the header, which is useful to the user so they can start playing almost directly after getting to the site. 
 
-![An image of the header and the rules for the Traffic Sign Memory shown at the top of the site](documentation/readmed-header-rules.png)
+![An image of the header and the rules for the Traffic Sign Memory shown at the top of the site](documentation/readme-header-rules.png)
 
 #### *The Game Board*
 
 This section of the site contains the game board which provies the user with all memory cards in order to play the game. The cards are faced down showing a placeholder image of a car. As the site loads, the images of traffic signs are randomly shuffled around by the computor on the sides of the cards that are facing down. Each card is a interactive button that the user can click. When clicked, they flip to face up and show a traffic sign. When two cards have been flipped and the traffic signs don´t match, the cards are automatically unflipped to face down so that this doesn´t have to be done by the user. This is done after almost 1,5 seconds, which is useful to the user as it gives some extra time to register which traffic signs were shown.   
 
-![An image of the game board with the cards facing down](documentation/readmed-gameboard-unflipped.png)
-![An image of the game board with some cards facing up](documentation/readmed-gameboard-some-flipped.png)
+![An image of the game board with the cards facing down](documentation/readme-gameboard-unflipped.png)
+![An image of the game board with some cards facing up](documentation/readme-gameboard-some-flipped.png)
 
 When the user clicks the first button, the time tracker starts (counting seconds). When the user have found all matching pairs of cards the time stops and the user is informed by it with an alert message informing of the time it took to finish the game and how to save and restart the game.This is done so that the user clearly knows that the game was finished.
 
@@ -37,7 +37,7 @@ The cards turn grey when hovered over, to make it easier for the user to see whi
 
 This section shows the time tracker, the saved time scores and buttons to save and reset the game. After the game is finished the user can see the time it took to finish at the top of this section. The user can click the red save button and when doing this the latest time score is saved and will be shown below the time tracker to the right. The user is also provided with a best time score to the left, if playing the game several times. This is useful to the user as it adds excitement and makes it more fun to play. On smaller screens the best time score is shown above the latest time score, not beside it. The save and reset button have clear colors to make them stand out from the background and remind the user to save and how to reset.
 
-![An image of the result section showing time being tracked and saved time scores](documentation/readmed-time-tracker-scores.png)
+![An image of the result section showing time being tracked and saved time scores](documentation/readme-time-tracker-scores.png)
 
 If the user tries to save a score before finishing the game, an alert message will inform them of this and the user won´t be able to save, which is useful to the user as it prevents cheating and therefore probably faster learning. An alert message will also show if the user tries to save before even starting the game. 
 
